@@ -8,14 +8,12 @@ import {deleteMood} from '../redux/action'
 class MoodCard extends Component{
     
     deleteMood = () => {
-        // console.log("remove mood!", this.props.log.id)
         this.props.deleteMood(this.props.log.id)
     }
     
     render(){
         return(
             <div className="moodCard">
-                
                 <p>{changeDate(this.props.log.created_at)}</p>
                 <p className="moodName">{this.props.log.mood.name}</p>
                 <div className="moodTagContainer">

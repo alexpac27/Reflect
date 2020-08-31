@@ -19,9 +19,7 @@ class MoodContainer extends Component{
                {this.props.logs.reverse().map(log => <MoodCard key={log.id} log={log}/>)}
             </div>
         )
-    }
-
-    
+    }  
 }
 
 const msp = (state) =>{

@@ -63,7 +63,7 @@ export const changeDate = (date) =>{
         function getKeyByValue(moods, obj) {
             const newNum = parseInt(Object.keys(moods).find(key => moods[key] === obj.mood))
             return newNum
-          }
+        }
 
         const newObject = {
             mood: getKeyByValue(moods,obj),
