@@ -1,14 +1,314 @@
-.navBar{
-  display: flex;
-  background-color: burlywood;
-  height: 10vh;
-  width: 100%;
+/* TABLE OF CONTENTS      */
+
+/* 1. APP CONTAINER       */
+/* 2. IMAGES AND ICONS    */
+/* 3. NAV BAR             */
+/* 4. PARENT CONTAINERS   */
+/* 5. COMPONENTS          */
+/* 6. LABELS              */
+
+
+
+/* 1. APP CONTAINER  */
+
+.mainContainer{
+  background-color: #444;
+  background-image: url('https://api.timeforkids.com/wp-content/uploads/2019/09/final-cover-forest.jpg');
+  background-size: cover;
+  /* height: 100vh; */
 }
 
+.App{
+  margin: -2em;
+  padding: 7em 7em;
+  
+}
+
+.logo{
+  padding: 0em;
+}
+
+
+/* 2. IMAGES AND ICONS */
+
+.articleImage{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* 3. NAV BAR  */
+
+.navBar{
+  display: flex;
+  background-color: rgb(101, 161, 185);
+  height: 10vh;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  --spacing: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.2rem; 
+}
+
+
+
+
 .tabTitle{
-  background-color: aqua;
+  background-color: inherit;
   margin-top: auto;
   margin-left: auto;
   margin-bottom: auto;
   margin-right: auto;
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: 300;
+  font-stretch: extra-expanded;
+}
+
+
+/* 4. PARENT CONTAINERS */
+.ArticleContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.loginContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+/* 5. COMPONENTS */
+
+.articleItem{
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  flex-grow: 0;
+  flex-basis: 26%;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.articleTitle{
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem; 
+}
+
+.articleBody{
+  align-items: flex-start;
+}
+
+.cardBottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.articleCat{
+  color: rgb(54, 54, 54);
+}
+
+.articleDD{
+  margin-left: 1rem;
+
+  margin: 5px;
+  height:30px;
+  width: 10rem;
+    font-size:14pt;
+}
+
+.favBtn{
+  background-color: rgb(184, 108, 143);
+  width: 70px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.journalForm{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  /* background-color: white; */
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+  align-items: center;
+}
+.moodForm{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  /* background-color: white; */
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+  align-items: center;
+}
+
+
+.formInput{
+  margin: 5px;
+  height:20px;
+  width: 30rem;
+    font-size:14pt;
+}
+
+.prompt{
+  font-size: 30px;
+}
+
+.formBtn{
+  background-color: rgb(184, 108, 143);
+  height: 30px;
+  width: 100px;
+  border-radius: 6px;
+}
+
+.tagBtn{
+  margin: 6px;
+  border-radius: 12px;
+  background-color: rgba(5, 5, 5, 0);
+  color: white;
+  border-color: white;
+  height: 2rem;
+  width: 7rem;
+  font-size: 16px;
+}
+
+.tagBtnContainer{
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.moodSubmitBtn{
+  background-color: rgb(184, 108, 143);
+  height: 30px;
+  width: 100px;
+  border-radius: 6px;
+}
+
+.moodCard{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  /* background-color: white; */
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+}
+
+.moodName{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.moodTagContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  align-items: flex-end;
+}
+
+.moodTag{
+  flex-basis: 20%;
+}
+
+.journalCard{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+  font-size: 1.3rem;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+  font-size: 1.3rem;
+}
+
+.profileFavs{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.loginForm{
+  display: flex;
+  flex-basis: 40%;
+  border: 3px solid rgb(195, 195, 195);
+  margin-top: 70px;
+  margin-bottom: 100vh;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  justify-content: center;
+}
+
+
+/* 6. LABELS */
+
+.formLabels{
+  font-weight: bold;
+  font-display: center;
+  text-align: center;
+  
+}
+
+.moodLabel{
+  font-size: 30px;
+  margin-bottom: 15px;
 }
