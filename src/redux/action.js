@@ -25,7 +25,6 @@ export const getJournals = (dispatch) => {
 }
 
 export const postJournal = (state, dispatch) => {
-
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/journals",{
             method: "POST",
@@ -34,8 +33,8 @@ export const postJournal = (state, dispatch) => {
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                journal:
-                    {user_id: 1,
+                journal: {
+                    user_id: 1,
                     prompt: state.prompt,
                     resp1: state.input1,
                     resp2: state.input2,
@@ -47,37 +46,35 @@ export const postJournal = (state, dispatch) => {
         .then(data => dispatch({type: "fetched journals", payload: data}))
     }
 }
-export const renderFav = (idObj, state) => {
 
+export const renderFav = (idObj, state) => {
     if (state){
- return function(dispatch){
-        fetch("http://localhost:3000/api/v1/favorites",{
-            method: "POST",
-            headers: {
-                "content-type":"application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify({
-                favorite:
-                    {user_id: 1,
-                    article_id: idObj
-                }
+        return function(dispatch){
+            fetch("http://localhost:3000/api/v1/favorites",{
+                method: "POST",
+                headers: {
+                    "content-type":"application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify({
+                    favorite:
+                        {user_id: 1,
+                        article_id: idObj
+                    }
+                })
             })
-        })
-        .then(resp =>resp.json())
-        .then(data => dispatch({type: "favorite articles", payload: data})) 
-    }
+            .then(resp =>resp.json())
+            .then(data => dispatch({type: "favorite articles", payload: data})) 
+        }
     } else {
-         return function(dispatch){
-        fetch(`http://localhost:3000/api/v1/favorites/${idObj}`,{
-            method: "DELETE"
-        })
-        .then(resp =>resp.json())
-        .then(data => dispatch({type: "favorite articles", payload: data})) //
-    }
-    }
-   
-   
+        return function(dispatch){
+            fetch(`http://localhost:3000/api/v1/favorites/${idObj}`,{
+                method: "DELETE"
+            })
+            .then(resp =>resp.json())
+            .then(data => dispatch({type: "favorite articles", payload: data})) //
+        }
+    }  
 }
 
 export const fetchFavs = (dispatch) => {
@@ -114,7 +111,6 @@ export const deleteMood = (idObj) => {
 export const submitLog = (state) => {
     const obj = moodLogConverter(state)
     console.log("returned object from converter helper", obj)
-    // return {type: "boobs"}
 
     if (state.request === "add"){
         return function(dispatch){
@@ -140,16 +136,5 @@ export const submitLog = (state) => {
             .then(data => dispatch({type: "add mood log", payload: data})) 
         }
     } 
-        //else {
-    //      return function(dispatch){
-    //     fetch(`http://localhost:3000/api/v1/favorites/${idObj}`,{
-    //         method: "DELETE"
-    //     })
-    //     .then(resp =>resp.json())
-    //     .then(data => dispatch({type: "favorite articles", payload: data})) //
-    // }
-    // }
-   
-   
 }
 
