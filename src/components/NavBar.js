@@ -8,6 +8,7 @@ class NavBar extends React.Component{
             <div className="navBar">
                 <Link to='/moods' className="tabTitle">Track Mood</Link>
                 <Link to='/journal' className="tabTitle">Gratitude Journal</Link>
+                <Link to='/breathe' className="tabTitle">Breathe</Link>
                 <Link to='/resources' className="tabTitle">Wellness Resources</Link>
                 <Link to='/profile' className="tabTitle">Profile</Link>
                 <Link to='/' className="tabTitle">Log Out</Link>

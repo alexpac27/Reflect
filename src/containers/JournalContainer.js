@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { render } from "@testing-library/react";
 import JournalCard from "../components/JournalCard";
 import JournalEntry from "../components/JournalEntry";
 import {connect} from 'react-redux'

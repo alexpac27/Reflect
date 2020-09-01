@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import Profile from './containers/Profile'
 import ArticleContainer from './containers/ArticleContainer'
 import JournalContainer from "./containers/JournalContainer";
+import BreatheContainer from "./containers/BreatheContainer";
 import MoodContainer from "./containers/MoodContainer";
 import Login from "./containers/Login";
 import {fetchFavs} from "./redux/action";
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route path='/moods' render={()=> <MoodContainer/>}></Route>
             <Route path='/journal' render={()=> <JournalContainer/>}></Route>
+            <Route path='/breathe' render={()=> <BreatheContainer/>}></Route>
             <Route path='/resources' render={()=> <ArticleContainer/>}></Route>
             <Route path='/profile' render={()=> <Profile/>}></Route>
             <Route path='/' render={()=> <Login/>}></Route>
