@@ -15,13 +15,10 @@ class ArticleCard extends Component{
     removeFav = () => {
         const fav = this.props.favorites.filter(fav => fav.user_id === 1 && fav.article_id === this.props.article.id)
         const favId = fav[0].id
-        // console.log("in remove article", fav)
-        // console.log("in remove article--favorite state", this.props.favorites)
         this.setState({add: !this.state.add}, () => this.props.renderFav(favId, this.state.add))
         
     }
     render(){
-        console.log("render--favorite state", this.props.favorites)
         return(
             <div className="articleItem">
                 <img className="articleImage" src={this.props.article.image_url} alt=""/>
