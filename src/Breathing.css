@@ -7,9 +7,27 @@ font-family: 'Montserrat', sans-serif;
 min-height: 70vh;
 overflow: hidden;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
-margin: 0px
+margin-bottom: -6em;
+color: white;
+justify-content: center;
+margin-top: -2.5em;
+}
+
+.hold{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+.quote{
+    text-align: center;
+    font-weight: lighter;
+    color: whitesmoke;
+    margin-top: 1em;
 }
 
 .container {
@@ -18,9 +36,10 @@ margin: 0px
     justify-content: center;
     height: 300px;
     width: 300px;
-    margin: auto;
+    margin: 50px;
     position: relative;
-    transform: scale(1)
+    transform: scale(1);
+    
 }
 
 .container.grow {
@@ -66,7 +85,7 @@ margin: 0px
     left: 140px;
     width: 20px;
     height: 190px;
-    animation: rotate 7.5s  linear forwards infinite;
+    animation: rotate 9s  linear forwards infinite;
     transform-origin:  bottom center;
 }
 
@@ -76,6 +95,10 @@ margin: 0px
     height: 20px;
     width: 20px;
     display: block;
+}
+
+.circleText{
+    text-align: center;
 }
 
 @keyframes rotate {

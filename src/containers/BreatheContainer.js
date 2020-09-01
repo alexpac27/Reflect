@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import '../Breathing.css'
+import '../Breathing.css';
+import ScriptTag from 'react-script-tag';
+import '../helpers/BreathingExercise.js'
+
+
+const totalTime = 7500
+const breatheTime = (totalTime / 5) * 2
+const holdTime = totalTime / 5
 
 class BreathContainer extends Component{
 
     constructor(props){
         super(props);
         this.state =  {
-            currentCount: 180,
             minutes: 3,
             seconds: 0
           }
@@ -37,21 +43,26 @@ class BreathContainer extends Component{
         clearInterval(this.myInterval)
     }
 
+
     render(){
         const { minutes, seconds } = this.state
+        let innerText = 'Breath in!'
+        let container = 'container grow'
 
         return(
+            <div>
             <div className="breathBody">
-                 { minutes === 0 && seconds === 0
-                    ? <h1>Done!</h1>
-                    : <h1>Time Remaining: {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
-                }
-
+              
+              <h3>Breath out</h3>
                 <div className='container'>
 
                     <div className="circle"></div>
 
-                    <p id="text"></p>
+                    <div id="text" className="circleText">{ minutes === 0 && seconds === 0
+                    ? <h1>Done!</h1>
+                    : <div> <h3>Time Remaining:</h3>
+                    <h3> {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h3></div>
+                }</div>
 
                     <div className="pointer-container">
                         <div className="pointer"></div>
@@ -60,8 +71,13 @@ class BreathContainer extends Component{
                     <div className="gradient-circle"></div>
 
                 </div>
+                    <h3>Breath In</h3>
+            </div>
+            <div className="hold">
+                    <h3>Hold</h3>
 
-                <h1>Take as much time as you need</h1>
+            </div>
+                <h2 className="quote"><i>"Breath is the link between mind and body." – Dan Brule</i></h2>
             </div>
         )    
     }

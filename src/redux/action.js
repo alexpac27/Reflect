@@ -110,7 +110,7 @@ export const deleteMood = (idObj) => {
 
 export const submitLog = (state) => {
     const obj = moodLogConverter(state)
-    console.log("returned object from converter helper", obj)
+    // console.log("returned object from converter helper", obj)
 
     if (state.request === "add"){
         return function(dispatch){
