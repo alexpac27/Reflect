@@ -36,6 +36,8 @@ function logReducer(state = defaultState.logs, action){
             return action.payload
         case "add mood log":
             return action.payload
+        case "update log":
+            return action.payload 
         default:
             return state
     }

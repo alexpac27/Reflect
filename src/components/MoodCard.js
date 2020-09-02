@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import {changeDate} from '../helpers/HelperMethods'
 import {connect} from 'react-redux'
 import {changeMood} from '../redux/action'
-import {Link} from 'react-router-dom'
-import {submitLog} from '../redux/action'
 
 
 
@@ -12,6 +10,7 @@ class MoodCard extends Component{
     state = {
         delete: false,
         update: false,
+        showForm: false,
         tagArray: [],
         mood: "Happy",
         request: "add",
@@ -56,8 +55,9 @@ class MoodCard extends Component{
 
         submitMood = (e) =>{
             e.preventDefault()
-            this.setState({formComplete: !this.state.formComplete}, () => this.props.changeMood(this.props.log.id, this.state))
+            this.setState({formComplete: !this.state.formComplete, showForm: false}, () => this.props.changeMood(this.props.log.id, this.state))
         }
+
 
         moodSelect = (e) =>{
             this.setState({
@@ -73,18 +73,19 @@ class MoodCard extends Component{
     }
 
     updateMood = () =>{
-        this.setState({ update: !this.state.update })
+        this.setState({ showForm: true, update: true })
     }
 
     cancelEdit = () =>{
-        this.setState({ update: !this.state.update })
+        this.setState({ showForm: false })
     }
     
     render(){
+        console.log("state.update: ", this.state.update)
         return(
             <div>
                 
-            {this.state.update ? 
+            {this.state.showForm ? 
             <div>
                 <form className="moodForm" onSubmit={this.submitMood}>
                 <label className="moodLabel">Update today's mood</label>

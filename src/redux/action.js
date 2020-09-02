@@ -125,29 +125,29 @@ export const changeMood = (idObj, state) => {
     } else if (state.update){
         const obj = moodLogConverter(state)
         console.log("updating in action", idObj)
-        return {type: "legss"}
-        // return function(dispatch){
-        //     fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
-        //         method: "PATCH",
-        //         headers: {
-        //             "content-type":"application/json",
-        //             Accept: "application/json"
-        //         },
-        //         body: JSON.stringify({
-        //             log:
-        //                 {user_id: 1,
-        //                 mood_id: obj.mood,
-        //                 tag1: obj.tag1,
-        //                 tag2: obj.tag2,
-        //                 tag3: obj.tag3,
-        //                 tag4: obj.tag4,
-        //                 tag5: obj.tag5,
-        //             }
-        //         })
-        //     })
-        //     .then(resp =>resp.json())
-        //     .then(data => dispatch({type: "add mood log", payload: data})) 
-        // }
+        // return {type: "legss"}
+        return function(dispatch){
+            fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
+                method: "PATCH",
+                headers: {
+                    "content-type":"application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify({
+                    log:
+                        {user_id: 1,
+                        mood_id: obj.mood,
+                        tag1: obj.tag1,
+                        tag2: obj.tag2,
+                        tag3: obj.tag3,
+                        tag4: obj.tag4,
+                        tag5: obj.tag5,
+                    }
+                })
+            })
+            .then(resp =>resp.json())
+            .then(data => dispatch({type: "update log", payload: data}))
+        }
     }
 }
 
