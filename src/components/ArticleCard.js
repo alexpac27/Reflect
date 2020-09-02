@@ -21,7 +21,8 @@ class ArticleCard extends Component{
     render(){
         return(
             <div className="articleItem">
-                <img className="articleImage" src={this.props.article.image_url} alt=""/>
+                {/* <img className="articleImage" src={this.props.article.image_url} alt=""/> */}
+                <iframe  width="600" height="190" className="articleImage" src={this.props.article.image_url} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 <p className="articleTitle">{this.props.article.title}</p>
                 <p className="articleBody">{this.props.article.content}</p>
                 <span className="cardBottom">

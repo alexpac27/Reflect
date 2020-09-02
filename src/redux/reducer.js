@@ -6,13 +6,25 @@ const defaultState = {
     logs: [],
     journals: [],
     favorites: [],
-    moods: []
+    moods: [],
+    loggedInUser: null
 
 }
 
-function userReducer(state = defaultState.users, action){
+function usersReducer(state = defaultState.users, action){
     switch (action.type) {
         case "get users":
+            return action.payload
+        default:
+            return state
+    } 
+}
+function loggedUserReducer(state = defaultState.loggedInUser, action){
+    switch (action.type) {
+        case "logged in user":
+            return action.payload
+        case "log out":
+            return action.payload
         default:
             return state
     } 
@@ -67,7 +79,8 @@ function favoritesReducer(state = defaultState.favorites, action){
 
 
 const rootReducer = combineReducers({
-    user: userReducer,
+    users: usersReducer,
+    loggedInUser: loggedUserReducer,
     articles: articleReducer,
     logs: logReducer,
     journals: journalReducer,

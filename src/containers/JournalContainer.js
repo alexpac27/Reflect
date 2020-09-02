@@ -3,6 +3,7 @@ import JournalCard from "../components/JournalCard";
 import JournalEntry from "../components/JournalEntry";
 import {connect} from 'react-redux'
 import {getJournals} from "../redux/action";
+import {Redirect} from 'react-router-dom'
 
 class JournalContainer extends Component{
 
@@ -14,9 +15,15 @@ class JournalContainer extends Component{
     render(){
         return(
             <div>
-                <JournalEntry/>
-                <h1>Previous Journal Entries</h1>
-                {this.props.journals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)}
+                { this.props.loggedInUser ?
+                    <div>
+                    <JournalEntry/>
+                    <h1>Previous Journal Entries</h1>
+                    {this.props.journals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)}
+                    </div>
+                    :
+                    <Redirect to="/"/>
+                }
             </div>
         )
     }
@@ -25,7 +32,7 @@ class JournalContainer extends Component{
 }
 
 const msp = (state) =>{
-    return {journals: state.journals}
+    return {journals: state.journals, loggedInUser: state.loggedInUser}
 }
 
 const mdp = (dispatch) =>{

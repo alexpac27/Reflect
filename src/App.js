@@ -9,6 +9,7 @@ import JournalContainer from "./containers/JournalContainer";
 import BreatheContainer from "./containers/BreatheContainer";
 import MoodContainer from "./containers/MoodContainer";
 import Login from "./containers/Login";
+import Register from "./containers/Register";
 import {fetchFavs} from "./redux/action";
 import {connect} from 'react-redux'
 
@@ -31,7 +32,8 @@ class App extends React.Component {
             <Route path='/breathe' render={()=> <BreatheContainer/>}></Route>
             <Route path='/resources' render={()=> <ArticleContainer/>}></Route>
             <Route path='/profile' render={()=> <Profile/>}></Route>
-            <Route path='/' render={()=> <Login/>}></Route>
+            <Route exact path='/' render={()=> <Login/>}></Route>
+            <Route exact path='/register' render={()=> <Register/>}></Route>
           </Switch>
   
           </div>
@@ -47,4 +49,8 @@ function mdp(dispatch){
   return {fetchFavs: () => dispatch(fetchFavs())}
 }
 
-export default connect(null, mdp)(App)
+const msp = (state) =>{
+  return {loggedInUser: state.loggedInUser}
+}
+
+export default connect(msp, mdp)(App)

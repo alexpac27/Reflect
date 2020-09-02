@@ -85,6 +85,23 @@ export const fetchFavs = (dispatch) => {
     }
 }
 
+export const userInfo = (dispatch) => {
+    return function(dispatch){
+        fetch("http://localhost:3000/api/v1/users")
+        .then(resp =>resp.json())
+        .then(data => dispatch({type: "get users", payload: data})) //
+    }
+}
+
+export const loggedInUser = (obj) => {
+    return function(dispatch){ dispatch({type: "logged in user", payload: obj}) } // My work around for auth
+}
+
+export const logOut = (obj) => {
+    return function(dispatch){ dispatch({type: "log out", payload: null}) } 
+}
+
+
 export const changeEntry = (idObj) => {
    
     return function(dispatch){
@@ -125,7 +142,6 @@ export const changeMood = (idObj, state) => {
     } else if (state.update){
         const obj = moodLogConverter(state)
         console.log("updating in action", idObj)
-        // return {type: "legss"}
         return function(dispatch){
             fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
                 method: "PATCH",

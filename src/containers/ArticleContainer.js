@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import ArticleCard from '../components/ArticleCard'
 import {connect} from 'react-redux'
 import { getArticles } from "../redux/action";
+import {Redirect} from 'react-router-dom'
 
 class ArticleContainer extends Component{
 
@@ -23,6 +24,8 @@ class ArticleContainer extends Component{
 
         return(
             <div>
+            { this.props.loggedInUser ?
+            <div>   
                 <h1>Wellness Resources</h1>
                 <form onChange={this.selectCat}>
                     <label>Select category</label>
@@ -36,13 +39,17 @@ class ArticleContainer extends Component{
                     </select>
                 </form>
                 <div className="ArticleContainer">
-                {this.state.category === "All" ?
-                this.props.articles.map(article => <ArticleCard key={article.id} article={article}/> )
-                :
-                this.props.articles.filter(art => art.category === this.state.category).map(article => <ArticleCard key={article.id} article={article}/> )
-                }
+                    {this.state.category === "All" ?
+                    this.props.articles.map(article => <ArticleCard key={article.id} article={article}/> )
+                    :
+                    this.props.articles.filter(art => art.category === this.state.category).map(article => <ArticleCard key={article.id} article={article}/> )
+                    }
 
                 </div>
+            </div>
+            :
+            <Redirect to="/"/>
+    }
             </div>
         )
     }
@@ -51,7 +58,7 @@ class ArticleContainer extends Component{
 }
 
 function msp(state){
-    return {articles: state.articles}
+    return {articles: state.articles, loggedInUser: state.loggedInUser}
 }
 
 function mdp(dispatch){

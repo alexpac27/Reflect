@@ -81,7 +81,7 @@ class MoodCard extends Component{
     }
     
     render(){
-        console.log("state.update: ", this.state.update)
+       
         return(
             <div>
                 

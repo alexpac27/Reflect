@@ -19,26 +19,24 @@ class LoginForm extends Component{
 
     submitForm = (e) => {
         e.preventDefault()
-        console.log("trying to log in", this.props.users)
-        const loggedInUser = this.props.users.find(user => user.email === this.state.email)
-        if (loggedInUser && loggedInUser.last_name === this.state.password){
-            this.props.loggedInUser(loggedInUser)
-        }
-        
+        console.log("trying to register", this.props.users)  
     }
+
+
     render(){
         return( 
                 <div className="loginForm">
                     <form onSubmit={this.submitForm}>
-                        <h1 className="formLabels">Login</h1>
+                        <h1 className="formLabels">Welcome!</h1>
+                        <p>Register as a new user</p>
                         <label className="formLabels">Email</label><br/>
                         <input onChange={this.onChange} name="email" type ="text" id="email" name="email" placeholder="example@email.com" value={this.state.email}/><br/>
                         <br/>
                         <label className="formLabels">Password</label><br/>
                         <input onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
                         <br/>
-                        <button type="submit" >Log In</button>
-                        <Link to='/register'>Sign Up</Link>
+                        <button type="submit" >Submit</button>
+                        <Link to='/'>Cancel</Link>
                         
                     </form>
                     
@@ -50,14 +48,14 @@ class LoginForm extends Component{
     
 }
 
-const msp = (state) =>{
-    return {users: state.users}
-}
+// const msp = (state) =>{
+//     return {users: state.users}
+// }
 
 const mdp = (dispatch) => {
     return {loggedInUser: (userObj) => dispatch(loggedInUser(userObj))}
 }
 
-export default connect(msp, mdp)(LoginForm)
+export default connect(null, mdp)(LoginForm)
 
 

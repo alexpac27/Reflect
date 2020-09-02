@@ -91,7 +91,7 @@ class MoodEntry extends Component{
                                 <button onClick={this.moodTag} name="family" className={this.state.family}>Family</button>
                                 <button onClick={this.moodTag} name="friends" className={this.state.friends}>Friends</button>
                                 <button onClick={this.moodTag} name="travel" className={this.state.travel}>Travel</button>
-                                <button onClick={this.moodTag} name="self Care" className={this.state.selfCare}>Self Care</button>
+                                <button onClick={this.moodTag} name="selfCare" className={this.state.selfCare}>Self Care</button>
                                 <button onClick={this.moodTag} name="relationships" className={this.state.relationships}>Relationships</button>
                                 <button onClick={this.moodTag} name="calm" className={this.state.calm}>Calm</button>
                                 <button onClick={this.moodTag} name="money" className={this.state.money}>Money</button>

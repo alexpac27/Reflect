@@ -4,6 +4,7 @@ import MoodCard from '../components/MoodCard'
 import MoodEntry from "../components/MoodEntry";
 import {connect} from 'react-redux'
 import { getLogs } from "../redux/action";
+import {Redirect} from 'react-router-dom'
 
 class MoodContainer extends Component{
 
@@ -14,16 +15,23 @@ class MoodContainer extends Component{
     render(){
         return(
             <div>
+                { this.props.loggedInUser ?
+                <div>
                 <MoodEntry/>
                 <h1>Mood History</h1>
                {this.props.logs.reverse().map(log => <MoodCard key={log.id} log={log}/>)}
+               </div>
+               :
+                <Redirect to="/"/>
+            }
+                
             </div>
         )
     }  
 }
 
 const msp = (state) =>{
-    return {logs: state.logs}
+    return {logs: state.logs, loggedInUser: state.loggedInUser}
 }
 
 const mdp = (dispatch) =>{
