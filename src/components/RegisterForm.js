@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import {connect} from 'react-redux'
-import {loggedInUser} from '../redux/action'
+import {createUser} from '../redux/action'
 
 class LoginForm extends Component{
 
     state = {
         email: "",
-        password: ""
+        password: "",
+        firstName: "",
+        lastName: ""
     }
 
 
@@ -19,7 +21,8 @@ class LoginForm extends Component{
 
     submitForm = (e) => {
         e.preventDefault()
-        console.log("trying to register", this.props.users)  
+        // console.log("trying to register", this.state)  
+        this.props.createUser(this.state)
     }
 
 
@@ -29,12 +32,19 @@ class LoginForm extends Component{
                     <form onSubmit={this.submitForm}>
                         <h1 className="formLabels">Welcome!</h1>
                         <p>Register as a new user</p>
+                        <label className="formLabels">First Name</label><br/>
+                        <input required onChange={this.onChange} name="firstName" type ="text"  placeholder="First name" value={this.state.firstName}/><br/>
+                        <br/>
+                        <label className="formLabels">Last Name</label><br/>
+                        <input required  onChange={this.onChange} name="lastName" type ="text"  placeholder="Last name" value={this.state.lastName}/><br/>
+                        <br/>
                         <label className="formLabels">Email</label><br/>
-                        <input onChange={this.onChange} name="email" type ="text" id="email" name="email" placeholder="example@email.com" value={this.state.email}/><br/>
+                        <input  required onChange={this.onChange} name="email" type ="text" placeholder="example@email.com" value={this.state.email}/><br/>
                         <br/>
                         <label className="formLabels">Password</label><br/>
-                        <input onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
+                        <input required  onChange={this.onChange} name="password" type="password"  placeholder="password" value={this.state.password}/><br/>
                         <br/>
+                        {this.props.error ? <p>{this.props.error}</p> : null}
                         <button type="submit" >Submit</button>
                         <Link to='/'>Cancel</Link>
                         
@@ -48,14 +58,14 @@ class LoginForm extends Component{
     
 }
 
-// const msp = (state) =>{
-//     return {users: state.users}
-// }
-
-const mdp = (dispatch) => {
-    return {loggedInUser: (userObj) => dispatch(loggedInUser(userObj))}
+const msp = (state) =>{
+    return {error: state.error}
 }
 
-export default connect(null, mdp)(LoginForm)
+const mdp = (dispatch) => {
+    return {createUser: (state) => dispatch(createUser(state))}
+}
+
+export default connect(msp, mdp)(LoginForm)
 
 

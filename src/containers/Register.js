@@ -6,27 +6,30 @@ import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component{
 
-    // componentDidMount(){
-    //     this.props.userInfo()
-    // }
+  
 
     render(){
-        // console.log("logged In user", this.props.loggedInUser)
+        console.log("logged In user", this.props.loggedInUser)
         return(
+            <>
+            {!this.props.loggedInUser ?
             
             <div className="loginContainer">
                 <RegisterForm/>
             </div>
+            :
+            <Redirect to='/moods'/>
+        }
+            </>
+            
         )
     }
 }
 
-// const msp = (state) => {
-//     return {users: state.users, loggedInUser: state.loggedInUser}
-// }
-
-const mdp = (dispatch) => {
-    return {userInfo: () => dispatch(userInfo())}
+const msp = (state) => {
+    return {users: state.users, loggedInUser: state.loggedInUser}
 }
 
-export default connect(null,mdp)(Login)
+
+
+export default connect(msp)(Login)

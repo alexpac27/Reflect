@@ -7,7 +7,8 @@ const defaultState = {
     journals: [],
     favorites: [],
     moods: [],
-    loggedInUser: null
+    loggedInUser: null,
+    error: null
 
 }
 
@@ -28,6 +29,17 @@ function loggedUserReducer(state = defaultState.loggedInUser, action){
         default:
             return state
     } 
+}
+
+function errorReducer(state = defaultState.error, action){
+    switch(action.type){
+        case "register error":
+            return action.payload
+        case "remove error":
+            return action.payload
+            default:
+                return state
+    }
 }
 
 
@@ -84,7 +96,8 @@ const rootReducer = combineReducers({
     articles: articleReducer,
     logs: logReducer,
     journals: journalReducer,
-    favorites: favoritesReducer
+    favorites: favoritesReducer,
+    error: errorReducer
 })
 
 

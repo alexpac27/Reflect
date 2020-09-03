@@ -96,6 +96,35 @@ export const userInfo = (dispatch) => {
 export const loggedInUser = (obj) => {
     return function(dispatch){ dispatch({type: "logged in user", payload: obj}) } // My work around for auth
 }
+export const createUser = (state) => {
+    return function(dispatch){
+        fetch("http://localhost:3000/api/v1/users",{
+            method: "POST",
+            headers: {
+                "content-type":"application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                user:{
+                    first_name: state.firstName,
+                    last_name: state.lastName,
+                    email: state.email,
+                    password: state.password
+                }
+            })
+        })
+        .then(resp =>resp.json())
+        .then(data => {
+            if (data.error === "failed to create user"){
+                dispatch({type: "register error", payload: "That email address is already registered. Please select another email."})
+            } else {
+                dispatch({type: "logged in user", payload: data})
+                dispatch({type: "remove error", payload: null})
+            }
+        }) 
+       
+    }
+}
 
 export const logOut = (obj) => {
     return function(dispatch){ dispatch({type: "log out", payload: null}) } 

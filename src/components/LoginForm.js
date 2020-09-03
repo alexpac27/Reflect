@@ -7,7 +7,8 @@ class LoginForm extends Component{
 
     state = {
         email: "",
-        password: ""
+        password: "",
+        error: null
     }
 
 
@@ -19,10 +20,11 @@ class LoginForm extends Component{
 
     submitForm = (e) => {
         e.preventDefault()
-        console.log("trying to log in", this.props.users)
         const loggedInUser = this.props.users.find(user => user.email === this.state.email)
         if (loggedInUser && loggedInUser.last_name === this.state.password){
             this.props.loggedInUser(loggedInUser)
+        } else {
+            this.setState({error: "The email and/or password is incorrect. Please try again."})
         }
         
     }
@@ -37,6 +39,7 @@ class LoginForm extends Component{
                         <label className="formLabels">Password</label><br/>
                         <input onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
                         <br/>
+                        {this.state.error ? <p>{this.state.error}</p> : null}
                         <button type="submit" >Log In</button>
                         <Link to='/register'>Sign Up</Link>
                         
