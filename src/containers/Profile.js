@@ -21,7 +21,6 @@ class Profile extends React.Component{
 
    
     render(){
-        console.log("in profile -- moods", this.props.loggedInUser.journals.length )
         return(
             <>
             { this.props.loggedInUser ?

@@ -85,17 +85,44 @@ export const fetchFavs = (dispatch) => {
     }
 }
 
-export const userInfo = (dispatch) => {
+export const userInfo = (user) => {
+    return function(dispatch){ dispatch({type: "logged in user", payload: user}) }
+}
+
+// export const userInfo = (user) => {
+//     return function(dispatch){
+//         fetch("http://localhost:3000/api/v1/users")
+//         .then(resp =>resp.json())
+//         .then(data => dispatch({type: "get users", payload: data})) 
+//     }
+// }
+
+// export const loggedInUser = (obj) => {
+//     return function(dispatch){ dispatch({type: "logged in user", payload: obj}) } // My work around for auth
+// }
+
+//auth code below
+
+export const loggedInUser = (obj) => {
     return function(dispatch){
-        fetch("http://localhost:3000/api/v1/users")
+        fetch("http://localhost:3000/api/v1/login", {
+            method: "POST",
+            headers: {
+                "content-type":"application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({user: obj})
+        })
         .then(resp =>resp.json())
-        .then(data => dispatch({type: "get users", payload: data})) //
+        .then(data => {
+            console.log("token", data.jwt)
+            localStorage.setItem("token", data.jwt)
+            dispatch({type: "logged in user", payload: data})
+    }) //)
     }
 }
 
-export const loggedInUser = (obj) => {
-    return function(dispatch){ dispatch({type: "logged in user", payload: obj}) } // My work around for auth
-}
+//end of auth code
 export const createUser = (state) => {
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/users",{
@@ -118,6 +145,8 @@ export const createUser = (state) => {
             if (data.error === "failed to create user"){
                 dispatch({type: "register error", payload: "This email address is already registered. Please select another email."})
             } else {
+                // console.log(data)
+                // return {type: "legs"}
                 dispatch({type: "logged in user", payload: data})
                 dispatch({type: "remove error", payload: null})
             }

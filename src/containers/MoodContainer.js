@@ -13,14 +13,19 @@ class MoodContainer extends Component{
     }
 
     render(){
-        // console.log("logged in user -- MC",this.props.loggedInUser.logs)
+        
         return(
             <div className="moodContainer">
                 { this.props.loggedInUser ?
                 <div className="moodContainerFirst">
                 <MoodEntry/>
                 <h1>Mood History</h1>
-               {this.props.logs.reverse().map(log => <MoodCard key={log.id} log={log}/>)}
+                {console.log("in mood container--logged in user", this.props.loggedInUser)}
+               {/* {this.props.loggedInUser.logs.length > 0 ?
+               this.props.logs.reverse().map(log => <MoodCard key={log.id} log={log}/>)
+                :
+                <p>No logs yet!</p>
+                } */}
                </div>
                :
                 <Redirect to="/"/>

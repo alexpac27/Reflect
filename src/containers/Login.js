@@ -2,16 +2,27 @@ import React from 'react'
 import LoginForm from '../components/LoginForm'
 import {connect} from 'react-redux'
 import {userInfo} from '../redux/action'
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 
 class Login extends React.Component{
 
     componentDidMount(){
-        this.props.userInfo()
+        const token = localStorage.getItem("token")
+        if (token){
+            fetch("http://localhost:3000/api/v1/profile", {
+                method: "GET",
+                headers:{Authorization: `Bearer ${token}`}
+            })
+            .then(resp => resp.json())
+            .then(data => this.props.userInfo(data))
+        } else{
+            // this.props.history.push("/login")
+            console.log("logged out")
+        }
     }
 
     render(){
-        // console.log("logged In user", this.props.loggedInUser)
+        console.log("In login--logged In user", this.props.loggedInUser)
         return(
             <div>
                 {!this.props.loggedInUser ?
@@ -28,11 +39,12 @@ class Login extends React.Component{
 }
 
 const msp = (state) => {
-    return {users: state.users, loggedInUser: state.loggedInUser}
+    return {loggedInUser: state.loggedInUser}
 }
 
 const mdp = (dispatch) => {
-    return {userInfo: () => dispatch(userInfo())}
+    return {userInfo: (user) => dispatch(userInfo(user))}
 }
 
-export default connect(msp,mdp)(Login)
+export default connect(msp, mdp)(Login)
+// export default withRouter(connect(msp, mdp)(Login))

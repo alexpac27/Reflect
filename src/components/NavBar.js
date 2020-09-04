@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link} from "react-router-dom";
+import { Link, withRouter} from "react-router-dom";
 import {connect} from 'react-redux'
 import {logOut} from '../redux/action'
 
@@ -8,6 +8,8 @@ class NavBar extends React.Component{
     logOut = () =>{
         console.log("logging out")
         this.props.logOut()
+        localStorage.removeItem("token")
+        // this.props.history.push("/login")
     }
 
     render(){
@@ -40,3 +42,4 @@ const mdp = (dispatch) => {
 }
 
 export default connect(msp, mdp)(NavBar)
+// export default withRouter(connect(msp, mdp)(NavBar))

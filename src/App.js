@@ -15,9 +15,9 @@ import {connect} from 'react-redux'
 
 class App extends React.Component {
 
-  componentDidMount(){
-    this.props.fetchFavs()
-}
+//   componentDidMount(){
+//     this.props.fetchFavs()
+// }
 
   render(){
     return (
@@ -45,12 +45,12 @@ class App extends React.Component {
   
 }
 
-function mdp(dispatch){
-  return {fetchFavs: () => dispatch(fetchFavs())}
-}
+// function mdp(dispatch){
+//   return {fetchFavs: () => dispatch(fetchFavs())}
+// }
 
 const msp = (state) =>{
   return {loggedInUser: state.loggedInUser}
 }
 
-export default connect(msp, mdp)(App)
+export default connect(msp)(App)
