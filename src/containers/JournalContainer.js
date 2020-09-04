@@ -14,9 +14,9 @@ class JournalContainer extends Component{
 
     render(){
         return(
-            <div>
+            <div className="journalContainer">
                 { this.props.loggedInUser ?
-                    <div>
+                    <div className="journalContainerFirst">
                     <JournalEntry/>
                     <h1>Previous Journal Entries</h1>
                     {this.props.journals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)}

@@ -33,7 +33,7 @@
 
 .App{
   /* margin: 0em; */
-  margin-top: -6em;
+  margin-top: -8em;
   padding: 7em;
   padding-left: 2em;
   padding-right: 2em;
@@ -42,6 +42,9 @@
 
 .logo{
   padding: -10em;
+  font-family: 'Homemade Apple', cursive;
+  letter-spacing: 4px;
+  font-size: 30px;
 }
 
 
@@ -58,14 +61,13 @@
 .navBar{
   display: flex;
   background-color: rgb(101, 161, 185);
-  height: 10vh;
-  width: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+  height: 8vh;
+  width: 100%; 
   --spacing: 1em;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 1.2rem; 
+  font-weight: 900;
 }
 
 
@@ -101,10 +103,37 @@
   /* justify-content: space-evenly; */
 }
 
+.wellnessContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wellnessContainerFirst{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 45%;
+  margin-right: 3em;
+  /* justify-content: flex-end; */
+}
+
 .moodContainer{
   display: flex;
   justify-content: flex-end;
 }
+
+.profileTop{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profileTopFirst{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 45%;
+  margin-right: 3em;
+  /* justify-content: flex-end; */
+}
+
 .moodContainerFirst{
   display: flex;
   flex-direction: column;
@@ -113,15 +142,29 @@
   /* justify-content: flex-end; */
 }
 
+.journalContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.journalContainerFirst{
+  /* border: solid black; */
+  display: flex;
+  flex-direction: column;
+  flex-basis: 45%;
+  margin-right: 3em;
+}
+
 
 /* 5. COMPONENTS */
 
 .articleItem{
   display: flex;
   flex-direction: column;
+  /* flex-wrap: wrap; */
   flex-shrink: 1;
   flex-grow: 0;
-  flex-basis: 26%;
+  flex-basis: 100%;
   border: 3px solid rgb(195, 195, 195);
   margin-top: 10px;
   margin-bottom: 10px;
@@ -231,6 +274,8 @@
 
 .prompt{
   font-size: 30px;
+  text-align: center;
+  margin: 15px;
 }
 
 .formBtn{
@@ -346,7 +391,7 @@
   flex-direction: column;
   flex-basis: 35%;
   /* border: 3px solid rgb(195, 195, 195); */
-  margin-top: 70px;
+  margin-top: 40px;
   margin-bottom: 30vh;
   padding: 10px;
   border-radius: 10px;
@@ -378,6 +423,13 @@
   margin-left: 20%;
   margin-top: -10px;
   margin-bottom: 35px;
+}
+
+.sectionLabel{
+  padding: -10em;
+  font-family: 'Homemade Apple', cursive;
+  letter-spacing: 4px;
+  font-size: 30px;
 }
 
 .moodLabel{

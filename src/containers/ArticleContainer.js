@@ -23,10 +23,10 @@ class ArticleContainer extends Component{
     render(){
 
         return(
-            <div>
+            <div className="wellnessContainer">
             { this.props.loggedInUser ?
-            <div>   
-                <h1>Wellness Resources</h1>
+            <div className="wellnessContainerFirst">   
+                {/* <h1>Wellness Resources</h1> */}
                 <form onChange={this.selectCat}>
                     <label>Select category</label>
                     <select className="articleDD">

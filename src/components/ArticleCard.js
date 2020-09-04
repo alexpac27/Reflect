@@ -23,7 +23,7 @@ class ArticleCard extends Component{
         return(
             <div className="articleItem">
                 {/* <img className="articleImage" src={this.props.article.image_url} alt=""/> */}
-                <iframe  width="600" height="190" className="articleImage" src={this.props.article.image_url} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe  width="600" height="250" className="articleImage" src={this.props.article.image_url} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 <p className="articleTitle">{this.props.article.title}</p>
                 <p className="articleBody">{this.props.article.content}</p>
                 <span className="cardBottom">

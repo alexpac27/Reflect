@@ -116,7 +116,7 @@ export const createUser = (state) => {
         .then(resp =>resp.json())
         .then(data => {
             if (data.error === "failed to create user"){
-                dispatch({type: "register error", payload: "That email address is already registered. Please select another email."})
+                dispatch({type: "register error", payload: "This email address is already registered. Please select another email."})
             } else {
                 dispatch({type: "logged in user", payload: data})
                 dispatch({type: "remove error", payload: null})

@@ -23,9 +23,10 @@ class Profile extends React.Component{
     render(){
         console.log("in profile -- moods", this.props.loggedInUser.journals.length )
         return(
-            <div>
-                { this.props.loggedInUser ?
-                    <div>    
+            <>
+            { this.props.loggedInUser ?
+                <div className="profileTop">
+                    <div className="profileTopFirst">    
                         {!this.state.editProfile ?
                                         <div className="profile">
                                             <h1>Profile</h1>
@@ -55,10 +56,11 @@ class Profile extends React.Component{
                             </div>
                         </div>
                     </div>
+                 </div>
                     :
                     <Redirect to="/"/>
                 }
-            </div>
+            </>
         )
     }
 

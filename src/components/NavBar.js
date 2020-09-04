@@ -15,9 +15,9 @@ class NavBar extends React.Component{
         return(
             <div className="navBar">
                 <Link to='/moods' className="tabTitle">Track Mood</Link>
-                <Link to='/journal' className="tabTitle">Gratitude Journal</Link>
+                <Link to='/journal' className="tabTitle">Gratitude</Link>
                 <Link to='/breathe' className="tabTitle">Breathe</Link>
-                <Link to='/resources' className="tabTitle">Wellness Resources</Link>
+                <Link to='/resources' className="tabTitle">Wellness</Link>
                 <Link to='/profile' className="tabTitle">Profile</Link>
                 {this.props.loggedInUser ?
                     <Link to='/' onClick={this.logOut} className="tabTitle">Log Out</Link>
