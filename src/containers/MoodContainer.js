@@ -13,10 +13,11 @@ class MoodContainer extends Component{
     }
 
     render(){
+        // console.log("logged in user -- MC",this.props.loggedInUser.logs)
         return(
-            <div>
+            <div className="moodContainer">
                 { this.props.loggedInUser ?
-                <div>
+                <div className="moodContainerFirst">
                 <MoodEntry/>
                 <h1>Mood History</h1>
                {this.props.logs.reverse().map(log => <MoodCard key={log.id} log={log}/>)}
@@ -32,10 +33,12 @@ class MoodContainer extends Component{
 
 const msp = (state) =>{
     return {logs: state.logs, loggedInUser: state.loggedInUser}
+    // return { loggedInUser: state.loggedInUser}
 }
 
 const mdp = (dispatch) =>{
     return {fetchLogs: () => dispatch(getLogs())}
 }
 
+// export default connect(msp)(MoodContainer);
 export default connect(msp,mdp)(MoodContainer);

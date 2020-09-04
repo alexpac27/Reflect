@@ -29,26 +29,29 @@ class LoginForm extends Component{
     render(){
         return( 
                 <div className="loginForm">
+                        <h1 className="topLabelWelcome">Welcome!</h1>
+                        <p className="topLabelPara">Register as a new user</p>
                     <form onSubmit={this.submitForm}>
-                        <h1 className="formLabels">Welcome!</h1>
-                        <p>Register as a new user</p>
                         <label className="formLabels">First Name</label><br/>
-                        <input required onChange={this.onChange} name="firstName" type ="text"  placeholder="First name" value={this.state.firstName}/><br/>
+                        <input  className="loginInput" required onChange={this.onChange} name="firstName" type ="text"  placeholder="First name" value={this.state.firstName}/><br/>
                         <br/>
+
                         <label className="formLabels">Last Name</label><br/>
-                        <input required  onChange={this.onChange} name="lastName" type ="text"  placeholder="Last name" value={this.state.lastName}/><br/>
+                        <input  className="loginInput" required  onChange={this.onChange} name="lastName" type ="text"  placeholder="Last name" value={this.state.lastName}/><br/>
                         <br/>
+
                         <label className="formLabels">Email</label><br/>
-                        <input  required onChange={this.onChange} name="email" type ="text" placeholder="example@email.com" value={this.state.email}/><br/>
+                        <input   className="loginInput" required onChange={this.onChange} name="email" type ="text" placeholder="example@email.com" value={this.state.email}/><br/>
                         <br/>
+
                         <label className="formLabels">Password</label><br/>
-                        <input required  onChange={this.onChange} name="password" type="password"  placeholder="password" value={this.state.password}/><br/>
+                        <input  className="loginInput" required  onChange={this.onChange} name="password" type="password"  placeholder="password" value={this.state.password}/><br/>
                         <br/>
-                        {this.props.error ? <p>{this.props.error}</p> : null}
-                        <button type="submit" >Submit</button>
+
+                        <button type="submit" >Submit</button><br></br>
                         <Link to='/'>Cancel</Link>
-                        
                     </form>
+                        {this.props.error ? <p className="errors">{this.props.error}</p> : null}
                     
                 </div>
            

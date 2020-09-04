@@ -24,7 +24,7 @@ class App extends React.Component {
       <Router>
         <div className="mainContainer">
           <div className="App">
-          <h1 className="logo">Wellness App</h1>
+          <h1 className="logo">Reflect</h1>
           <NavBar/>
           <Switch>
             <Route path='/moods' render={()=> <MoodContainer/>}></Route>

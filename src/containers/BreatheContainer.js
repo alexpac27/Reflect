@@ -50,10 +50,10 @@ class BreathContainer extends Component{
         let container = 'container grow'
 
         return(
-            <div>
+            <>
             <div className="breathBody">
               
-              <h3>Breath out</h3>
+              <h3 className="instructionFont">Breath out</h3>
                 <div className='container'>
 
                     <div className="circle"></div>
@@ -71,14 +71,14 @@ class BreathContainer extends Component{
                     <div className="gradient-circle"></div>
 
                 </div>
-                    <h3>Breath In</h3>
+                    <h3 className="instructionFont">Breath In</h3>
             </div>
             <div className="hold">
                     <h3>Hold</h3>
 
             </div>
                 <h2 className="quote"><i>"Breath is the link between mind and body." – Dan Brule</i></h2>
-            </div>
+            </>
         )    
     }
 }

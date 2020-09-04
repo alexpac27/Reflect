@@ -21,7 +21,7 @@ class Profile extends React.Component{
 
    
     render(){
-        console.log("in profile -- moods", this.props.journals )
+        console.log("in profile -- moods", this.props.loggedInUser.journals.length )
         return(
             <div>
                 { this.props.loggedInUser ?
@@ -34,12 +34,10 @@ class Profile extends React.Component{
                                             <p><b>Last Name:</b> {this.props.loggedInUser.email}</p>
                                             <div>
                                                 <h3>Total Check-Ins</h3>
-                                                <p><b>Moods:</b> {this.props.logs.length} </p>
-                                                {this.props.journals.length === 0 ?
-                                                <p><b>Gratitude Journals:</b> 5</p>
-                                                :
-                                                <p><b>Gratitude Journals:</b> {this.props.journals.length}</p>
-                                                }
+                                                <p><b>Moods:</b> {this.props.loggedInUser.logs.length} </p>
+                                                
+                                                <p><b>Gratitude Journals:</b> {this.props.loggedInUser.journals.length}</p>
+                                                
                                             </div>
                                                 <button onClick={this.editProfile}>Edit Profile</button>
                                         </div>

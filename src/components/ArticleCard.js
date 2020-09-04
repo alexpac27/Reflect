@@ -19,6 +19,7 @@ class ArticleCard extends Component{
         
     }
     render(){
+        console.log("in article card-- loged in user", this.props.favorites)
         return(
             <div className="articleItem">
                 {/* <img className="articleImage" src={this.props.article.image_url} alt=""/> */}
@@ -41,7 +42,7 @@ class ArticleCard extends Component{
 }
 
 const msp = (state) =>{
-return {favorites: state.favorites}
+return {favorites: state.favorites, loggedInUser: state.loggedInUser}
 }
 
 const mdp = (dispatch) => {

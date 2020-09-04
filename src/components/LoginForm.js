@@ -24,27 +24,29 @@ class LoginForm extends Component{
         if (loggedInUser && loggedInUser.last_name === this.state.password){
             this.props.loggedInUser(loggedInUser)
         } else {
-            this.setState({error: "The email and/or password is incorrect. Please try again."})
+            this.setState({error: "The email and/or password is incorrect."})
         }
         
     }
     render(){
         return( 
                 <div className="loginForm">
-                    <form onSubmit={this.submitForm}>
-                        <h1 className="formLabels">Login</h1>
-                        <label className="formLabels">Email</label><br/>
-                        <input onChange={this.onChange} name="email" type ="text" id="email" name="email" placeholder="example@email.com" value={this.state.email}/><br/>
-                        <br/>
-                        <label className="formLabels">Password</label><br/>
-                        <input onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
-                        <br/>
-                        {this.state.error ? <p>{this.state.error}</p> : null}
-                        <button type="submit" >Log In</button>
-                        <Link to='/register'>Sign Up</Link>
-                        
-                    </form>
-                    
+                        <h1 className="topLabel">Login</h1>
+                        <div className="loginFormDiv">
+                            <form onSubmit={this.submitForm}>
+                            <label className="formLabels">Email</label><br/>
+                            <input className="loginInput" onChange={this.onChange} name="email" type ="text" id="email" name="email" placeholder="example@email.com" value={this.state.email}/><br/>
+                            <br/>
+                            <label className="formLabels">Password</label><br/>
+                            <input className="loginInput" onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
+                            <br/>
+                            
+                            <button type="submit" >Log In</button><br></br>
+                            <Link to='/register'>Sign Up</Link>
+                            
+                            {this.state.error ? <p className="errors">{this.state.error}</p> : null}
+                        </form>
+                    </div>
                 </div>
            
         )
