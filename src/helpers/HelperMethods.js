@@ -76,4 +76,23 @@ export const changeDate = (date) =>{
         }
         return newObject
     }
+
+    export const moodName = (obj) => {
+        const moods = {
+            1: "Happy",
+            2:"Excited",
+            3: "Grateful",
+            4:"Relaxed",
+            5:"Content",
+            6:"Tired",
+            7:"Unsure",
+            8:"Bored",
+            9:"Anxious",
+            10:"Angry",
+            11:"Stressed",
+            12:"Sad"
+        }
+
+        return moods[obj]
+    }
     

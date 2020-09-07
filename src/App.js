@@ -10,7 +10,7 @@ import BreatheContainer from "./containers/BreatheContainer";
 import MoodContainer from "./containers/MoodContainer";
 import Login from "./containers/Login";
 import Register from "./containers/Register";
-import {fetchFavs} from "./redux/action";
+// import {fetchFavs} from "./redux/action";
 import {connect} from 'react-redux'
 
 class App extends React.Component {

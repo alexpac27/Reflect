@@ -49,7 +49,7 @@ class MoodEntry extends Component{
 
     submitMood = (e) =>{
         e.preventDefault()
-        this.setState({formComplete: !this.state.formComplete}, () => this.props.submitLog(this.state))
+        this.setState({formComplete: !this.state.formComplete}, () => this.props.submitLog(this.state, this.props.loggedInUser))
     }
 
     moodSelect = (e) =>{
@@ -108,8 +108,12 @@ class MoodEntry extends Component{
     }
 }
 
+const msp = (state) =>{
+    return { loggedInUser: state.loggedInUser}
+}
 
 const mdp = (dispatch) =>{
-    return {submitLog: (state) => dispatch(submitLog(state))}
+    return {submitLog: (state, user) => dispatch(submitLog(state, user))}
 }
-export default connect(null, mdp)(MoodEntry)
+
+export default connect(msp, mdp)(MoodEntry)

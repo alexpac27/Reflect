@@ -11,6 +11,7 @@ class JournalCard extends Component{
     }
 
     render(){
+        // console.log("in journal form", this.props.entry)
         return(
             <div className="journalCard">
                 <p>{changeDate(this.props.entry.created_at)}</p>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {changeDate} from '../helpers/HelperMethods'
+import {moodName} from '../helpers/HelperMethods'
 import {connect} from 'react-redux'
 import {changeMood} from '../redux/action'
 
@@ -55,7 +56,7 @@ class MoodCard extends Component{
 
         submitMood = (e) =>{
             e.preventDefault()
-            this.setState({formComplete: !this.state.formComplete, showForm: false}, () => this.props.changeMood(this.props.log.id, this.state))
+            this.setState({formComplete: !this.state.formComplete, showForm: false}, () => this.props.changeMood(this.props.log.id, this.state, this.props.loggedInUser))
         }
 
 
@@ -69,7 +70,7 @@ class MoodCard extends Component{
 
 
     deleteMood = () => {
-        this.setState({delete: !this.state.delete}, () => this.props.changeMood(this.props.log.id, this.state))
+        this.setState({delete: !this.state.delete}, () => this.props.changeMood(this.props.log.id, this.state, this.props.loggedInUser))
     }
 
     updateMood = () =>{
@@ -81,7 +82,7 @@ class MoodCard extends Component{
     }
     
     render(){
-       
+        const foundLogs = this.props.logs.filter(log => log.user_id === this.props.loggedInUser.user.id)
         return(
             <div>
                 
@@ -110,7 +111,7 @@ class MoodCard extends Component{
                     <button onClick={this.moodTag} name="family" className={this.state.family}>Family</button>
                     <button onClick={this.moodTag} name="friends" className={this.state.friends}>Friends</button>
                     <button onClick={this.moodTag} name="travel" className={this.state.travel}>Travel</button>
-                    <button onClick={this.moodTag} name="self Care" className={this.state.selfCare}>Self Care</button>
+                    <button onClick={this.moodTag} name="selfCare" className={this.state.selfCare}>Self Care</button>
                     <button onClick={this.moodTag} name="relationships" className={this.state.relationships}>Relationships</button>
                     <button onClick={this.moodTag} name="calm" className={this.state.calm}>Calm</button>
                     <button onClick={this.moodTag} name="money" className={this.state.money}>Money</button>
@@ -124,8 +125,9 @@ class MoodCard extends Component{
         </div>
         :
         <div className="moodCard">
+            <p>LOGS</p>
             <p>{changeDate(this.props.log.created_at)}</p>
-                <p className="moodName">{this.props.log.mood.name}</p>
+                <p className="moodName">{moodName(this.props.log.mood_id)}</p>
                 <div className="moodTagContainer">
                     <p className="moodTag">{this.props.log.tag1}</p>
                     <p className="moodTag">{this.props.log.tag2}</p>
@@ -135,7 +137,8 @@ class MoodCard extends Component{
                 </div>
                 <div>
                     <button onClick={this.deleteMood}>X</button>
-                    { this.props.logs[this.props.logs.length -1].id === this.props.log.id ?
+                    {/* {console.log ("render", foundLogs)} */}
+                    { foundLogs[foundLogs.length -1].id === this.props.log.id ?
                     <button onClick={()=> this.updateMood(this.props.log.id)}>Update</button>
                     :
                     null
@@ -151,11 +154,14 @@ class MoodCard extends Component{
 }
 
 const msp = (state) =>{
-    return {logs: state.logs}
+    return {loggedInUser: state.loggedInUser, logs: state.logs}
 }
 
 const mdp = (dispatch) => {
-    return {changeMood: (id, state) => dispatch(changeMood(id, state))}
+    return {changeMood: (id, state, user) => dispatch(changeMood(id, state, user))}
 }
 
 export default connect(msp, mdp)(MoodCard)
+
+
+// this.props.loggedInUser.user.logs[this.props.loggedInUser.user.logs.length -1].id
