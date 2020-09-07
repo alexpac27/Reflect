@@ -4,7 +4,7 @@ export const getArticles = (dispatch) => {
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/articles")
         .then(resp =>resp.json())
-        .then(data => dispatch({type: "fetched articles", payload: data}))
+        .then(data => {dispatch({type: "fetched articles", payload: data}) })
     }
 }
 
@@ -20,7 +20,7 @@ export const getJournals = (dispatch) => {
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/journals")
         .then(resp =>resp.json())
-        .then(data => dispatch({type: "fetched journals", payload: data}))
+        .then(data => dispatch({type: "fetched journals", payload: data})) //
     }
 }
 
@@ -47,7 +47,7 @@ export const postJournal = (state, dispatch) => {
     }
 }
 
-export const renderFav = (idObj, state) => {
+export const renderFav = (idObj, state, userId) => {
     if (state){
         return function(dispatch){
             fetch("http://localhost:3000/api/v1/favorites",{
@@ -58,13 +58,13 @@ export const renderFav = (idObj, state) => {
                 },
                 body: JSON.stringify({
                     favorite:
-                        {user_id: 1,
+                        {user_id: userId,
                         article_id: idObj
                     }
                 })
             })
             .then(resp =>resp.json())
-            .then(data => dispatch({type: "favorite articles", payload: data})) 
+            .then(data => dispatch({type: "logged in user", payload: data}) )  //dispatch({type: "favorite articles", payload: data})
         }
     } else {
         return function(dispatch){
@@ -72,7 +72,11 @@ export const renderFav = (idObj, state) => {
                 method: "DELETE"
             })
             .then(resp =>resp.json())
-            .then(data => dispatch({type: "favorite articles", payload: data})) //
+            .then(data => {
+                fetch(`http://localhost:3000/api/v1/users/${userId}`)
+                .then(resp => resp.json())
+                .then(data => dispatch({type: "logged in user", payload: data}))
+            }) //dispatch({type: "favorite articles", payload: data}) 
         }
     }  
 }
@@ -104,7 +108,6 @@ export const userInfo = (user) => {
 //auth code below
 
 export const loggedInUser = (obj) => {
-    // console.log("in logged user action", obj)
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/login", {
             method: "POST",
@@ -116,10 +119,8 @@ export const loggedInUser = (obj) => {
         })
         .then(resp =>resp.json())
         .then(data => {
-            // console.log("token", data.user)
             localStorage.setItem("token", data.jwt)
             dispatch({type: "logged in user", payload: data})
-            // dispatch({type: "logged in user", payload: data.user})
     })
     }
 }
@@ -147,8 +148,6 @@ export const createUser = (state) => {
             if (data.error === "failed to create user"){
                 dispatch({type: "register error", payload: "This email address is already registered. Please select another email."})
             } else {
-                // console.log(data)
-                // return {type: "legs"}
                 dispatch({type: "logged in user", payload: data})
                 dispatch({type: "remove error", payload: null})
             }
@@ -163,7 +162,6 @@ export const logOut = (obj) => {
 
 
 export const changeEntry = (idObj) => {
-   
     return function(dispatch){
         fetch(`http://localhost:3000/api/v1/journals/${idObj}`,{
             method: "DELETE"
@@ -187,8 +185,6 @@ export const changeEntry = (idObj) => {
 
 
 export const changeMood = (idObj, state, user) => {
-    // console.log("in change mood action", state)
-
     if (state.delete){
         console.log("in action for deleting mood", idObj)
        
@@ -201,7 +197,6 @@ export const changeMood = (idObj, state, user) => {
         }
     } else if (state.update){
         const obj = moodLogConverter(state)
-        // console.log("updating in action", idObj, user)
         return function(dispatch){
             fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
                 method: "PATCH",

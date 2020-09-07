@@ -23,7 +23,7 @@ class Profile extends React.Component{
     render(){
         return(
             <>
-            { this.props.loggedInUser ?
+            {/* this.props.loggedInUser ?
                 <div className="profileTop">
                     <div className="profileTopFirst">    
                         {!this.state.editProfile ?
@@ -57,7 +57,7 @@ class Profile extends React.Component{
                     </div>
                  </div>
                     :
-                    <Redirect to="/"/>
+                    <Redirect to="/"/> */
                 }
             </>
         )

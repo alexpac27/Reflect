@@ -21,7 +21,7 @@ class ArticleContainer extends Component{
     }
 
     render(){
-
+       console.log("in AC -- fetched favs", this.props.favorites)
         return(
             <div className="wellnessContainer">
             { this.props.loggedInUser ?
@@ -58,7 +58,7 @@ class ArticleContainer extends Component{
 }
 
 function msp(state){
-    return {articles: state.articles, loggedInUser: state.loggedInUser}
+    return {articles: state.articles, loggedInUser: state.loggedInUser, favorites: state.favorites}
 }
 
 function mdp(dispatch){

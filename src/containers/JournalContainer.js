@@ -7,18 +7,18 @@ import {Redirect} from 'react-router-dom'
 
 class JournalContainer extends Component{
 
-    // componentDidMount(){
-    //     console.log("component did mount")
-    //     this.props.fetchJournals()
-    // }
+    componentDidMount(){
+        console.log("component did mount")
+        this.props.fetchJournals()
+    }
 
     render(){
+        const foundJournals = this.props.journals.filter(journal => journal.user_id === this.props.loggedInUser.user.id)
+        console.log("found journals : ", foundJournals)
+
         const person = this.props.loggedInUser
         let x = this
-        // debugger
-        // console.log("in journal", person)
-        // console.log("journal attr", person["user"]["journals"])
-        // console.log("object key", Object.keys(person["user"]))
+
         return(
             <div className="journalContainer">
                 { this.props.loggedInUser ?
@@ -26,7 +26,7 @@ class JournalContainer extends Component{
                     <JournalEntry/>
                     <h1>Previous Journal Entries</h1>
                     {person.user.journals.length > 0 ?
-                    person.user.journals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
+                    foundJournals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
                     :
                     <p>no jounrals yet</p>
                 }
@@ -42,12 +42,12 @@ class JournalContainer extends Component{
 }
 
 const msp = (state) =>{
-    return {loggedInUser: state.loggedInUser}
+    return {loggedInUser: state.loggedInUser, journals: state.journals}
 }
 
-// const mdp = (dispatch) =>{
-//     return {fetchJournals: () => dispatch(getJournals())}
-// }
+const mdp = (dispatch) =>{
+    return {fetchJournals: () => dispatch(getJournals())}
+}
 
 
-export default connect(msp)(JournalContainer)
+export default connect(msp, mdp)(JournalContainer)
