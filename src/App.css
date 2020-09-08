@@ -40,12 +40,7 @@
   
 }
 
-.logo{
-  padding: -10em;
-  font-family: 'Homemade Apple', cursive;
-  letter-spacing: 4px;
-  font-size: 30px;
-}
+
 
 
 /* 2. IMAGES AND ICONS */
@@ -63,11 +58,29 @@
   background-color: rgb(101, 161, 185);
   height: 8vh;
   width: 100%; 
+  /* width: 95%;  */
   --spacing: 1em;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 1.2rem; 
   font-weight: 900;
+}
+
+.logoNav{
+  overflow: hidden;
+  position: fixed;
+  width: 95%; 
+  top: 0;
+  background-color: #ebebeb;
+}
+
+.logo{
+  padding: -10em;
+  margin-left: 15px;
+  font-family: 'Homemade Apple', cursive;
+  letter-spacing: 4px;
+  font-size: 30px;
+  background-color: #ebebeb;
 }
 
 
@@ -93,7 +106,14 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
+  margin-top: 20px;
+  
 }
+
+/* .categorySelect{
+  position: fixed;
+  background-color: #ebebeb;
+} */
 
 .loginContainer{
   display: flex;
@@ -113,6 +133,8 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
+  margin-top: 210px;
+  background-color: #ebebeb;
   /* justify-content: flex-end; */
 }
 
@@ -131,6 +153,7 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
+  margin-top: 200px;
   /* justify-content: flex-end; */
 }
 
@@ -139,6 +162,7 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
+  margin-top: 200px;
   /* justify-content: flex-end; */
 }
 
@@ -153,6 +177,7 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
+  margin-top: 200px;
 }
 
 

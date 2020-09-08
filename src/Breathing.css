@@ -12,8 +12,10 @@
     margin-bottom: -6em;
     color: white;
     justify-content: center;
-    margin-top: -2.5em;
+    /* margin-top: -2.5em; */
+    margin-top: 150px;
     flex-basis: 30%;
+    position: sticky;
     /* border: solid black; */
     margin-left: 40%;
 }

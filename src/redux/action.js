@@ -186,8 +186,6 @@ export const changeEntry = (idObj) => {
 
 export const changeMood = (idObj, state, user) => {
     if (state.delete){
-        console.log("in action for deleting mood", idObj)
-       
         return function(dispatch){
             fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
                 method: "DELETE"
@@ -272,9 +270,7 @@ export const changeMood = (idObj, state, user) => {
 
 export const submitLog = (state, user) => {
     const obj = moodLogConverter(state)
-    // console.log("in submitlog --- state, user: ", state, user.user.id)
-    // return {type: "leggs"}
-
+   
     if (state.request === "add"){
         return function(dispatch){
             fetch("http://localhost:3000/api/v1/logs",{
@@ -301,3 +297,10 @@ export const submitLog = (state, user) => {
     } 
 }
 
+export const getUser = (userId) => {
+    return function(dispatch){
+    fetch(`http://localhost:3000/api/v1/users/${userId}`)
+                .then(resp => resp.json())
+                .then(data => dispatch({type: "logged in user", payload: data}))
+    }
+}

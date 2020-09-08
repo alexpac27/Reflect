@@ -26,8 +26,8 @@ class ArticleContainer extends Component{
             <div className="wellnessContainer">
             { this.props.loggedInUser ?
             <div className="wellnessContainerFirst">   
-                {/* <h1>Wellness Resources</h1> */}
-                <form onChange={this.selectCat}>
+                <div className="categorySelect">
+                <form  onChange={this.selectCat}>
                     <label>Select category</label>
                     <select className="articleDD">
                         <option selected value="All">All</option>
@@ -38,6 +38,7 @@ class ArticleContainer extends Component{
                         <option value="Mindfulness">Mindfulness</option>
                     </select>
                 </form>
+                </div>
                 <div className="ArticleContainer">
                     {this.state.category === "All" ?
                     this.props.articles.map(article => <ArticleCard key={article.id} article={article}/> )
