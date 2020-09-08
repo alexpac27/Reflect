@@ -18,6 +18,7 @@
     position: sticky;
     /* border: solid black; */
     margin-left: 40%;
+    max-height: 100vh;
 }
 
 .instructionFont{

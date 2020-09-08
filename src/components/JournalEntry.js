@@ -36,10 +36,10 @@ class JournalEntry extends Component{
     render(){
         return(
             <div>
-                <h1>Today's Entry</h1>
+                {/* <h1>Today's Entry</h1> */}
                 <div >
                     { this.state.formComplete ? 
-                    <h1 className="responseLabel">Thank you for submiting</h1> 
+                    <h1 className="responseLabel">Thank you for submitting</h1> 
                     
                     : 
                         <form className="journalForm" onSubmit={this.onSubmit}>

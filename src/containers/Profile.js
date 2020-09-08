@@ -36,7 +36,7 @@ class Profile extends React.Component{
                     <div className="profileTopFirst">    
                         {!this.state.editProfile ?
                                         <div className="profile">
-                                            <h1>Profile</h1>
+                                            {/* <h1>Profile</h1> */}
                                             <p><b>First Name:</b> {this.props.loggedInUser.user.first_name}</p>
                                             <p><b>Last Name:</b> {this.props.loggedInUser.user.last_name}</p>
                                             <p><b>Last Name:</b> {this.props.loggedInUser.user.email}</p>

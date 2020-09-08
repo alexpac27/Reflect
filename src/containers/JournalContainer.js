@@ -7,9 +7,18 @@ import {Redirect} from 'react-router-dom'
 
 class JournalContainer extends Component{
 
+    state = {
+        btnText: "View History",
+        history: false
+    }
+
     componentDidMount(){
         console.log("component did mount")
         this.props.fetchJournals()
+    }
+
+    showHistory = () =>{
+        this.setState({history: true})
     }
 
     render(){
@@ -24,12 +33,22 @@ class JournalContainer extends Component{
                 { this.props.loggedInUser ?
                     <div className="journalContainerFirst">
                     <JournalEntry/>
-                    <h1>Previous Journal Entries</h1>
-                    {person.user.journals.length > 0 ?
-                    foundJournals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
-                    :
-                    <p>no jounrals yet</p>
-                }
+                    <div className="historyBtnDiv">
+                       {/* <button className="divider"></button> */}
+                    <button onClick={this.showHistory} className="showHistory">{this.state.btnText}</button>
+                    </div>
+                        {this.state.history ? 
+                        <div className="journalHistory">
+                            <h1>Previous Journal Entries</h1>
+                            {person.user.journals.length > 0 ?
+                            foundJournals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
+                            :
+                            <p>Looks like you have no journal entries yet</p>
+                            }
+                        </div>
+                        :
+                        null
+                        }   
                     </div>
                     :
                     <Redirect to="/"/>

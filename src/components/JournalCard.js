@@ -15,11 +15,11 @@ class JournalCard extends Component{
         return(
             <div className="journalCard">
                 <p>{changeDate(this.props.entry.created_at)}</p>
-                <p><b>{this.props.entry.prompt} </b></p>
-                <p>1. {this.props.entry.resp1}</p>
-                <p>2. {this.props.entry.resp2}</p>
-                <p>3. {this.props.entry.resp3}</p>
-                <div>
+                <p className="cardPrompt"><b>{this.props.entry.prompt} </b></p>
+                <p className="entryResp">1. {this.props.entry.resp1}</p>
+                <p className="entryResp">2. {this.props.entry.resp2}</p>
+                <p className="entryResp">3. {this.props.entry.resp3}</p>
+                <div className="moodBtns">
                     <button onClick={this.removeJournal}>X</button>
                 </div>
             </div>

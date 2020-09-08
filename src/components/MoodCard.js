@@ -125,7 +125,7 @@ class MoodCard extends Component{
         </div>
         :
         <div className="moodCard">
-            <p>LOGS</p>
+            
             <p>{changeDate(this.props.log.created_at)}</p>
                 <p className="moodName">{moodName(this.props.log.mood_id)}</p>
                 <div className="moodTagContainer">
@@ -135,7 +135,7 @@ class MoodCard extends Component{
                     <p className="moodTag">{this.props.log.tag4}</p>
                     <p className="moodTag">{this.props.log.tag5}</p>
                 </div>
-                <div>
+                <div className="moodBtns">
                     <button onClick={this.deleteMood}>X</button>
                     {/* {console.log ("render", foundLogs)} */}
                     { foundLogs[foundLogs.length -1].id === this.props.log.id ?

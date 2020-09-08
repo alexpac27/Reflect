@@ -84,8 +84,6 @@
 }
 
 
-
-
 .tabTitle{
   background-color: inherit;
   margin-top: auto;
@@ -96,6 +94,42 @@
   color: aliceblue;
   font-weight: 300;
   font-stretch: extra-expanded;
+  padding: calc(var(--spacing) / 2) var(--spacing);
+}
+
+.tabTitle:focus{
+  font-weight: 900;
+  outline: none;
+  }
+
+.tabTitle:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: .5em;
+  left: var(--spacing);
+  right: var(--spacing);
+  height: 3px;
+  width: 100%;
+  background: currentColor;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+}
+
+/* .tabTitle:hover::after{
+  content: "";
+  font-weight: bolder;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  } */
+
+
+
+.tabTitle:active{
+font-weight: 900;
 }
 
 
@@ -126,6 +160,7 @@
 .wellnessContainer{
   display: flex;
   justify-content: flex-end;
+  min-height: 100vh;
 }
 
 .wellnessContainerFirst{
@@ -141,11 +176,13 @@
 .moodContainer{
   display: flex;
   justify-content: flex-end;
+  min-height: 100vh;
 }
 
 .profileTop{
   display: flex;
   justify-content: flex-end;
+  min-height: 100vh;
 }
 
 .profileTopFirst{
@@ -153,7 +190,7 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
-  margin-top: 200px;
+  margin-top: 250px;
   /* justify-content: flex-end; */
 }
 
@@ -162,13 +199,14 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
-  margin-top: 200px;
+  margin-top: 250px;
   /* justify-content: flex-end; */
 }
 
 .journalContainer{
   display: flex;
   justify-content: flex-end;
+  min-height: 100vh;
 }
 
 .journalContainerFirst{
@@ -177,7 +215,7 @@
   flex-direction: column;
   flex-basis: 45%;
   margin-right: 3em;
-  margin-top: 200px;
+  margin-top: 250px;
 }
 
 
@@ -196,6 +234,12 @@
   padding: 10px;
   border-radius: 10px;
   background-color: white;
+}
+
+.moodBtns{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .articleTitle{
@@ -303,11 +347,18 @@
   margin: 15px;
 }
 
+.cardPrompt{
+  margin-bottom: 34px;
+  text-align: center;
+}
+
 .formBtn{
   background-color: rgb(184, 108, 143);
   height: 30px;
   width: 100px;
   border-radius: 6px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .tagBtn{
@@ -328,6 +379,39 @@
   justify-content: center;
 
 }
+
+.showHistory{
+  width: 90px;
+  margin-top: 30px;
+  height: 40px;
+  width: 200px;
+  font-size: 19px;
+  border-radius: 20pt;
+}
+
+.showHistory:hover{
+  background-color: rgb(128, 159, 185);
+  transition: 0.3s;
+}
+
+.showHistory:focus{
+  outline: none;
+  background-color:  rgb(128, 159, 185);
+}
+
+.historyBtnDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .divider{
+  min-width: 90%;
+  background-color: rgba(5, 5, 5, 0.198);
+  border-color:  rgba(5, 5, 5, 0.198);
+  margin-top: 20px;
+  margin-bottom: 30px;
+} */
 
 .moodSubmitBtn{
   background-color: rgb(184, 108, 143);
@@ -356,14 +440,14 @@
 .moodName{
   font-weight: bold;
   font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .moodTagContainer{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
-  align-items: flex-end;
+  margin-top: -20px;
 }
 
 .moodTag{
@@ -379,11 +463,15 @@
   border: 3px solid rgb(195, 195, 195);
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   background-color: rgba(5, 5, 5, 0.794);
   color: white;
   font-size: 1.3rem;
+}
+
+.entryResp{
+  margin-top: -10px;
 }
 
 .profile{
@@ -422,6 +510,8 @@
   border-radius: 10px;
   /* background-color: white; */
   justify-content: center;
+  min-height: 100vh;
+ 
 }
 
 .formBottom{
