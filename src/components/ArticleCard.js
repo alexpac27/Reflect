@@ -21,7 +21,7 @@ class ArticleCard extends Component{
         
     }
     render(){
-        console.log("in article card-- state", this.props.article)
+        // console.log("in article card-- state", this.props.article)
         
         return(
             <div className="articleItem">
