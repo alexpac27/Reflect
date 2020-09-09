@@ -52,13 +52,7 @@ class Profile extends React.Component{
                                                 </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <h3>Total Check-Ins</h3>
-                                                <p><b>Moods:</b> {this.props.loggedInUser.user.logs.length} </p>
-                                                
-                                                <p><b>Gratitude Journals:</b> {this.props.loggedInUser.user.journals.length}</p>
-                                                
-                                            </div>
+                                           
                                            
                                         </div>
                                 :
@@ -67,6 +61,21 @@ class Profile extends React.Component{
                                     <button onClick={this.cancelEdit}>CANCEL</button>
                                 </div>
                         }
+
+                            <h1>Total Check-Ins</h1>
+                        <div className="stats">
+                            <div className="mStats">
+                                <i class="fas fa-universal-access"></i>
+                                <p>{this.props.loggedInUser.user.logs.length}</p>
+                                <h2>Moods Entries</h2>
+                            </div>
+                            <div className="jStats">
+                                <i class="fas fa-book-open"></i>
+                                <p>{this.props.loggedInUser.user.journals.length}</p>
+                                <h2>Gratitude Journals</h2>
+                            </div>
+                            
+                        </div>
 
                         <div>
                                 <h1>Favorite Wellness Resources</h1>

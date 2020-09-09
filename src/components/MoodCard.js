@@ -137,13 +137,14 @@ class MoodCard extends Component{
                     <p className="moodTag">{this.props.log.tag5}</p>
                 </div>
                 <div className="moodBtns">
-                    <button onClick={this.deleteMood}>X</button>
+                    
                     {/* {console.log ("render", foundLogs)} */}
                     { sortedFoundLogs[sortedFoundLogs.length -1].id === this.props.log.id ?
-                    <button onClick={()=> this.updateMood(this.props.log.id)}>Update</button>
+                    <button className="updateBtn" onClick={()=> this.updateMood(this.props.log.id)}>Update</button>
                     :
                     null
                     }
+                    <button className="deleteMoodBtn" onClick={this.deleteMood}>X</button>
                 </div>
         </div>
 
