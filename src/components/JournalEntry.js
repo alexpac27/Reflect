@@ -3,6 +3,7 @@ import {prompt} from '../helpers/HelperMethods'
 import _ from "lodash";
 import {connect} from 'react-redux'
 import {postJournal} from "../redux/action";
+import JCalendar from './JCalendar.js'
 
 class JournalEntry extends Component{
 
@@ -39,8 +40,10 @@ class JournalEntry extends Component{
                 {/* <h1>Today's Entry</h1> */}
                 <div >
                     { this.state.formComplete ? 
-                    <h1 className="responseLabel">Thank you for submitting</h1> 
-                    
+                     <div>
+                     {/* <h1 className="responseLabel">Thank you for submitting</h1>  */}
+                     <JCalendar/>
+                     </div>
                     : 
                         <form className="journalForm" onSubmit={this.onSubmit}>
                         <p className="prompt">{_.sample(prompt)}</p>
