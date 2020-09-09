@@ -1,10 +1,11 @@
 import React from "react";
 import './App.css';
 import {
-  BrowserRouter as Router, Route, Switch} from "react-router-dom";
+  BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import NavBar from './components/NavBar'
 import Profile from './containers/Profile'
 import ArticleContainer from './containers/ArticleContainer'
+import Reflect from './containers/Reflect'
 import JournalContainer from "./containers/JournalContainer";
 import BreatheContainer from "./containers/BreatheContainer";
 import MoodContainer from "./containers/MoodContainer";
@@ -35,6 +36,7 @@ class App extends React.Component {
             <Route path='/resources' render={()=> <ArticleContainer/>}></Route>
             <Route path='/profile' render={()=> <Profile/>}></Route>
             <Route exact path='/' render={()=> <Login/>}></Route>
+            <Route exact path='/reflect' render={()=> <Reflect/>}></Route>
             <Route exact path='/register' render={()=> <Register/>}></Route>
           </Switch>
   

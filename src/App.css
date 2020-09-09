@@ -63,7 +63,7 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 1.2rem; 
-  font-weight: 900;
+  /* font-weight: 900; */
 }
 
 .logoNav{
@@ -94,39 +94,43 @@
   color: aliceblue;
   font-weight: 300;
   font-stretch: extra-expanded;
+  position: relative;
   padding: calc(var(--spacing) / 2) var(--spacing);
 }
 
-.tabTitle:focus{
-  font-weight: 900;
-  outline: none;
-  }
+
 
 .tabTitle:after {
   content: "";
   position: absolute;
   display: block;
-  bottom: .5em;
-  left: var(--spacing);
-  right: var(--spacing);
+  bottom: .1em;
+  background-color: white;
+  /* left: var(--spacing);
+  right: var(--spacing); */
   height: 3px;
-  width: 100%;
-  background: currentColor;
-  -webkit-transform: scaleX(0);
+  width: 80%;
+   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  transition: -webkit-transform 150ms ease-in-out;
-  transition: transform 150ms ease-in-out;
-  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out; 
 }
 
-/* .tabTitle:hover::after{
+.tabTitle:hover::after{
   content: "";
   font-weight: bolder;
-  -webkit-transform: scaleX(1);
+   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  } */
+  }
 
 
+  .tabTitle:focus{
+    font-weight: 900;
+    /* outline: none; */
+    font-size: 1.3rem; 
+    transition: transform 550ms
+    }
 
 .tabTitle:active{
 font-weight: 900;
@@ -218,6 +222,44 @@ font-weight: 900;
   margin-top: 250px;
 }
 
+.videoBody{
+  min-height: 100vh;
+  /* margin-top: 300px; */
+  margin-top: 177px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.videoQuotes{
+  margin-top: -250px;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Cedarville Cursive', cursive;
+  z-index: 1;
+  margin-bottom: -30px;
+  letter-spacing: 4px;
+  position: fixed;
+}
+
+.video{
+  width: 1370px;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+.video-container{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+}
+
 
 /* 5. COMPONENTS */
 
@@ -228,12 +270,16 @@ font-weight: 900;
   flex-shrink: 1;
   flex-grow: 0;
   flex-basis: 100%;
-  border: 3px solid rgb(195, 195, 195);
+  /* border: 3px solid rgb(195, 195, 195); */
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: white;
+  /* background-color: white; */
+  border-style: none;
+
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
 }
 
 .moodBtns{
@@ -243,13 +289,17 @@ font-weight: 900;
 }
 
 .articleTitle{
-  color: black;
-  font-weight: bold;
-  font-size: 1.5rem; 
+  color:white;
+  font-weight: bolder;
+  font-size: 1.75rem; 
+  margin-bottom: 2px;
+  letter-spacing: 1px;
 }
 
 .articleBody{
   align-items: flex-start;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 
@@ -286,16 +336,31 @@ font-weight: 900;
   flex-wrap: wrap;
   flex-shrink: 1;
   flex-grow: 0;
+  /* border: 3px solid rgb(195, 195, 195); */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(5, 5, 5, 0.794);
+  color: white;
+  align-items: center;
+}
+/* .journalForm{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  flex-grow: 0;
   border: 3px solid rgb(195, 195, 195);
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
-  /* background-color: white; */
+  
   background-color: rgba(5, 5, 5, 0.794);
   color: white;
   align-items: center;
-}
+} */
 
 .moodForm{
   display: flex;
@@ -312,6 +377,7 @@ font-weight: 900;
   background-color: rgba(5, 5, 5, 0.794);
   color: white;
   align-items: center;
+  border-style: none;
 }
 
 .btnPressed{
@@ -329,9 +395,13 @@ font-weight: 900;
 
 .formInput{
   margin: 5px;
-  height:20px;
+  height:30px;
   width: 30rem;
-  font-size:14pt;
+  font-size:16pt;
+}
+
+.numbers{
+  font-size: 30px;
 }
 
 .loginInput{
@@ -344,22 +414,33 @@ font-weight: 900;
 .prompt{
   font-size: 30px;
   text-align: center;
-  margin: 15px;
+  margin: 20px;
 }
 
 .cardPrompt{
   margin-bottom: 34px;
   text-align: center;
+  font-size: 26px;
+  margin-top: 10px;
 }
 
 .formBtn{
-  background-color: rgb(184, 108, 143);
+  background-color:#4ca492b4;
+  /* background-color: rgb(184, 108, 143); */
   height: 30px;
   width: 100px;
   border-radius: 6px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  /* opacity: 0.8; */
+  transition: 0.3s;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-style: none;
 }
+
+.formBtn:hover {background-color:#4ca493;}
 
 .tagBtn{
   margin: 6px;
@@ -370,6 +451,12 @@ font-weight: 900;
   height: 2rem;
   width: 7rem;
   font-size: 16px;
+  outline: none;
+  /* border-style: none; */
+}
+
+.tagBtn:focus{
+  outline: none;
 }
 
 .tagBtnContainer{
@@ -377,7 +464,7 @@ font-weight: 900;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  outline: none;
 }
 
 .showHistory{
@@ -390,14 +477,16 @@ font-weight: 900;
 }
 
 .showHistory:hover{
-  background-color: rgb(128, 159, 185);
+  background-color: #336d62;
+  color: white;
   transition: 0.3s;
 }
 
-.showHistory:focus{
+/* .showHistory:focus{
   outline: none;
-  background-color:  rgb(128, 159, 185);
-}
+  background-color: #336d62;
+  color: white;
+} */
 
 .historyBtnDiv{
   display: flex;
@@ -414,11 +503,19 @@ font-weight: 900;
 } */
 
 .moodSubmitBtn{
-  background-color: rgb(184, 108, 143);
+  background-color:#4ca492b4;
   height: 30px;
   width: 100px;
   border-radius: 6px;
+  transition: 0.3s;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-style: none;
+  margin-bottom: 20px;
 }
+
+.moodSubmitBtn:hover {background-color:#4ca493;}
 
 .moodCard{
   display: flex;
@@ -432,7 +529,6 @@ font-weight: 900;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
-  /* background-color: white; */
   background-color: rgba(5, 5, 5, 0.794);
   color: white;
 }
@@ -441,6 +537,11 @@ font-weight: 900;
   font-weight: bold;
   font-size: 1.5rem;
   margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.moodDate{
+  letter-spacing: 1px;
 }
 
 .moodTagContainer{
@@ -452,6 +553,8 @@ font-weight: 900;
 
 .moodTag{
   flex-basis: 20%;
+  letter-spacing: 1px;
+  /* font-size: 18px; */
 }
 
 .journalCard{
@@ -472,6 +575,11 @@ font-weight: 900;
 
 .entryResp{
   margin-top: -10px;
+  font-size: 21px;
+}
+
+.journalDate{
+  font-size: 16px;
 }
 
 .profile{
@@ -512,6 +620,7 @@ font-weight: 900;
   justify-content: center;
   min-height: 100vh;
  
+ 
 }
 
 .formBottom{
@@ -550,6 +659,12 @@ font-weight: 900;
 .moodLabel{
   font-size: 30px;
   margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.selectLabel{
+  letter-spacing: 1px;
+  font-size: 20px;
 }
 
 /* 7. ERRORS */

@@ -126,7 +126,7 @@ class MoodCard extends Component{
         :
         <div className="moodCard">
             
-            <p>{changeDate(this.props.log.created_at)}</p>
+            <p className="moodDate">{changeDate(this.props.log.created_at)}</p>
                 <p className="moodName">{moodName(this.props.log.mood_id)}</p>
                 <div className="moodTagContainer">
                     <p className="moodTag">{this.props.log.tag1}</p>

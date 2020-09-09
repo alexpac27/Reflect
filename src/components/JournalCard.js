@@ -14,7 +14,7 @@ class JournalCard extends Component{
         // console.log("in journal form", this.props.entry)
         return(
             <div className="journalCard">
-                <p>{changeDate(this.props.entry.created_at)}</p>
+                <p className="journalDate">{changeDate(this.props.entry.created_at)}</p>
                 <p className="cardPrompt"><b>{this.props.entry.prompt} </b></p>
                 <p className="entryResp">1. {this.props.entry.resp1}</p>
                 <p className="entryResp">2. {this.props.entry.resp2}</p>

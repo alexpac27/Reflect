@@ -45,9 +45,9 @@ class JournalEntry extends Component{
                         <form className="journalForm" onSubmit={this.onSubmit}>
                         <p className="prompt">{_.sample(prompt)}</p>
                         {/* <p className="prompt">{this.samplePrompt()}</p> */}
-                        <span>1.  <input name="input1" type="text" className="formInput"></input></span>
-                        <span>2. <input name="input2" type="text" className="formInput"></input></span>
-                        <span>3. <input name="input3" type="text" className="formInput"></input></span>
+                        <span className="numbers">1.  <input name="input1" type="text" className="formInput"></input></span>
+                        <span className="numbers">2. <input name="input2" type="text" className="formInput"></input></span>
+                        <span className="numbers">3.  <input name="input3" type="text" className="formInput"></input></span>
                         <input type="submit" value="Done" className="formBtn"></input>
                         </form>
                     }

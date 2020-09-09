@@ -30,7 +30,7 @@ class Login extends React.Component{
                 <LoginForm/>
             </div>
             :
-            <Redirect to='/moods'/>
+            <Redirect to='/reflect'/>
                 }
 
             </div>

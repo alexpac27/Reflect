@@ -28,7 +28,7 @@ class ArticleContainer extends Component{
             <div className="wellnessContainerFirst">   
                 <div className="categorySelect">
                 <form  onChange={this.selectCat}>
-                    <label>Select category</label>
+                    <label className="selectLabel">Select category</label>
                     <select className="articleDD">
                         <option selected value="All">All</option>
                         <option value="Meditation">Meditation</option>
