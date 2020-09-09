@@ -21,22 +21,26 @@ class MoodContainer extends Component{
     }
 
 
+
     render(){
-        const foundLogs = this.props.logs.filter(log => log.user_id === this.props.loggedInUser.user.id)
+
+        // const foundLogs = this.props.logs.filter(log => log.user_id === this.props.loggedInUser.user.id)
+        // const sortedFoundLogs = foundLogs.sort((a, b) => (a.id > b.id) ? 1 : -1)
+        
         return(
             <div className="moodContainer">
                 { this.props.loggedInUser ?
                 <div className="moodContainerFirst">
                     <MoodEntry/>
                     <div className="historyBtnDiv">
-                    {/* <button className="divider"></button> */}
                     <button onClick={this.showHistory} className="showHistory">{this.state.btnText}</button>
                     </div>
                     {this.state.history ? 
                     <div className="moodHistory">
                         <h1>Mood History</h1>
                         {this.props.loggedInUser.user.logs.length > 0 ?
-                        foundLogs.reverse().map(log => <MoodCard key={log.id} log={log}/>)
+                        this.props.logs.filter(log => log.user_id === this.props.loggedInUser.user.id).sort((a, b) => (a.id > b.id) ? 1 : -1).reverse().map(log => <MoodCard key={log.id} log={log}/>)
+                        // sortedFoundLogs.reverse().map(log => <MoodCard key={log.id} log={log}/>)
                         :
                         <p>No logs yet!</p>
                         }

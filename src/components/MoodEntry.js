@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {submitLog} from '../redux/action'
+import Calendar from './Calendar.js'
 
 
 class MoodEntry extends Component{
@@ -65,8 +66,10 @@ class MoodEntry extends Component{
 
                 <div >
                     { this.state.formComplete ? 
-                    <h1 className="responseLabel">Thank you for submitting</h1> 
-                    
+                    <div>
+                    {/* <h1 className="responseLabel">Thank you for submitting</h1>  */}
+                    <Calendar/>
+                    </div>
                     : 
                         <form className="moodForm" onSubmit={this.submitMood}>
                             <label className="moodLabel">How are you feeling today?</label>

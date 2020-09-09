@@ -3,6 +3,7 @@ import './App.css';
 import {
   BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import NavBar from './components/NavBar'
+import Calendar from './components/Calendar'
 import Profile from './containers/Profile'
 import ArticleContainer from './containers/ArticleContainer'
 import Reflect from './containers/Reflect'
@@ -31,6 +32,7 @@ class App extends React.Component {
           </div>
           <Switch>
             <Route path='/moods' render={()=> <MoodContainer/>}></Route>
+            <Route exact path='/calendar' render={()=> <Calendar/>}></Route>
             <Route path='/journal' render={()=> <JournalContainer/>}></Route>
             <Route path='/breathe' render={()=> <BreatheContainer/>}></Route>
             <Route path='/resources' render={()=> <ArticleContainer/>}></Route>

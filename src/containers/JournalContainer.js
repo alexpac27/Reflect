@@ -22,8 +22,8 @@ class JournalContainer extends Component{
     }
 
     render(){
-        const foundJournals = this.props.journals.filter(journal => journal.user_id === this.props.loggedInUser.user.id)
-        console.log("found journals : ", foundJournals)
+        // const foundJournals = this.props.journals.filter(journal => journal.user_id === this.props.loggedInUser.user.id)
+        // console.log("found journals : ", foundJournals)
 
         const person = this.props.loggedInUser
         let x = this
@@ -41,7 +41,7 @@ class JournalContainer extends Component{
                         <div className="journalHistory">
                             <h1>Previous Journal Entries</h1>
                             {person.user.journals.length > 0 ?
-                            foundJournals.reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
+                            this.props.journals.filter(journal => journal.user_id === this.props.loggedInUser.user.id).reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
                             :
                             <p>Looks like you have no journal entries yet</p>
                             }

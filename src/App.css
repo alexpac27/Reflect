@@ -324,10 +324,28 @@ font-weight: 900;
 }
 
 .favBtn{
-  background-color: rgb(184, 108, 143);
-  width: 70px;
-  height: 45px;
-  border-radius: 10px;
+  background-color: #4ca493;
+  width: 90px;
+  height: 35px;
+  border-radius: 20px;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  margin: 10px;
+  margin-right: 10px;
+}
+.removeBtn{
+  background-color: rgba(255, 99, 71, 0.746);
+  width: 90px;
+  height: 35px;
+  border-radius: 20px;
+  border-style: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  margin: 10px;
+  margin-right: 10px;
 }
 
 .journalForm{
@@ -448,8 +466,8 @@ font-weight: 900;
   background-color: rgba(5, 5, 5, 0);
   color: white;
   border-color: white;
-  height: 2rem;
-  width: 7rem;
+  height: 2.2rem;
+  width: 7.3rem;
   font-size: 16px;
   outline: none;
   /* border-style: none; */
@@ -474,6 +492,7 @@ font-weight: 900;
   width: 200px;
   font-size: 19px;
   border-radius: 20pt;
+  outline: none;
 }
 
 .showHistory:hover{
@@ -494,13 +513,52 @@ font-weight: 900;
   align-items: center;
 }
 
-/* .divider{
-  min-width: 90%;
-  background-color: rgba(5, 5, 5, 0.198);
-  border-color:  rgba(5, 5, 5, 0.198);
-  margin-top: 20px;
-  margin-bottom: 30px;
-} */
+.loginBtns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.enterBtn{
+  background-color:#4ca492b4;
+  height: 30px;
+  width: 100px;
+  border-radius: 6px;
+  transition: 0.3s;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-style: none;
+  margin: 20px;
+  margin-left:-90px;
+}
+
+.enterBtn:hover{
+  background-color:#4ca493;
+}
+
+.altBtnLink{
+  font-size: 20px;
+  margin-left:-112px;
+  margin-top: -25px;
+  text-decoration: none;
+  color: rgb(42, 81, 165);
+}
+
+.personalInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.profileImage{
+  margin: 20px;
+  margin-right: 8px;
+  margin-left: -5px;
+  border-radius: 8pt;
+
+}
 
 .moodSubmitBtn{
   background-color:#4ca492b4;
@@ -588,7 +646,8 @@ font-weight: 900;
   flex-wrap: wrap;
   flex-shrink: 1;
   flex-grow: 0;
-  border: 3px solid rgb(195, 195, 195);
+  /* border: 3px solid rgb(195, 195, 195); */
+  border-style: none;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -596,6 +655,11 @@ font-weight: 900;
   background-color: rgba(5, 5, 5, 0.794);
   color: white;
   font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.textInfo{
+  margin: 10px;
 }
 
 .profileFavs{
@@ -604,7 +668,28 @@ font-weight: 900;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: stretch;
+}
 
+.editBtnDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.editProfileBtn{
+  background-color:#4ca492b4;
+  height: 30px;
+  width: 180px;
+  border-radius: 6px;
+  transition: 0.3s;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-style: none;
+  margin: 20px;
+}
+
+.editProfileBtn:hover{
+  background-color:#4ca493;
 }
 
 .loginForm{
@@ -642,6 +727,7 @@ font-weight: 900;
 }
 .topLabelWelcome{
   margin-left: 20%;
+  margin-top: 100px;
 }
 .topLabelPara{
   margin-left: 20%;

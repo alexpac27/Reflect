@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {createUser} from '../redux/action'
 
@@ -33,11 +33,11 @@ class LoginForm extends Component{
                         <p className="topLabelPara">Register as a new user</p>
                     <form onSubmit={this.submitForm}>
                         <label className="formLabels">First Name</label><br/>
-                        <input  className="loginInput" required onChange={this.onChange} name="firstName" type ="text"  placeholder="First name" value={this.state.firstName}/><br/>
+                        <input  className="loginInput" required onChange={this.onChange} name="firstName" type ="text"  placeholder="first name" value={this.state.firstName}/><br/>
                         <br/>
 
                         <label className="formLabels">Last Name</label><br/>
-                        <input  className="loginInput" required  onChange={this.onChange} name="lastName" type ="text"  placeholder="Last name" value={this.state.lastName}/><br/>
+                        <input  className="loginInput" required  onChange={this.onChange} name="lastName" type ="text"  placeholder="last name" value={this.state.lastName}/><br/>
                         <br/>
 
                         <label className="formLabels">Email</label><br/>
@@ -48,8 +48,10 @@ class LoginForm extends Component{
                         <input  className="loginInput" required  onChange={this.onChange} name="password" type="password"  placeholder="password" value={this.state.password}/><br/>
                         <br/>
 
-                        <button type="submit" >Submit</button><br></br>
-                        <Link to='/'>Cancel</Link>
+                        <div className="loginBtns">
+                            <button className="enterBtn" type="submit" >Submit</button><br></br>
+                            <Link className="altBtnLink" to='/'>Cancel</Link>
+                        </div>    
                     </form>
                         {this.props.error ? <p className="errors">{this.props.error}</p> : null}
                     

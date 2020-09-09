@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {loggedInUser} from '../redux/action'
 
@@ -45,10 +45,10 @@ class LoginForm extends Component{
                             <label className="formLabels">Password</label><br/>
                             <input className="loginInput" onChange={this.onChange} name="password" type="password" id="password" name="password" placeholder="password" value={this.state.password}/><br/>
                             <br/>
-                            
-                            <button type="submit" >Log In</button><br></br>
-                            <Link to='/register'>Sign Up</Link>
-                            
+                            <div className="loginBtns">
+                                <button className="enterBtn" type="submit" >Log In</button><br></br>
+                                <Link className="altBtnLink" to='/register'>Sign Up</Link>
+                            </div>   
                             {this.state.error ? <p className="errors">{this.state.error}</p> : null}
                         </form>
                     </div>

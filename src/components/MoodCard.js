@@ -83,6 +83,7 @@ class MoodCard extends Component{
     
     render(){
         const foundLogs = this.props.logs.filter(log => log.user_id === this.props.loggedInUser.user.id)
+        const sortedFoundLogs = foundLogs.sort((a, b) => (a.id > b.id) ? 1 : -1)
         return(
             <div>
                 
@@ -138,7 +139,7 @@ class MoodCard extends Component{
                 <div className="moodBtns">
                     <button onClick={this.deleteMood}>X</button>
                     {/* {console.log ("render", foundLogs)} */}
-                    { foundLogs[foundLogs.length -1].id === this.props.log.id ?
+                    { sortedFoundLogs[sortedFoundLogs.length -1].id === this.props.log.id ?
                     <button onClick={()=> this.updateMood(this.props.log.id)}>Update</button>
                     :
                     null
