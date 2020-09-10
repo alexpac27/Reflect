@@ -57,8 +57,8 @@ class Calendar extends Component{
                     <div className="today">7</div>
                     <div className="today">8</div>
                     <div className="today">9</div>
-                    <div>10</div>
-                    {/* <div className="today">10</div> */}
+                    <div className="today">10</div>
+                    {/* <div>10</div> */}
                     <div>11</div>
                     <div>12</div>
                     <div>13</div>
