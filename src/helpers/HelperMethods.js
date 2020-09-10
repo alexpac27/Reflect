@@ -24,7 +24,8 @@ export const changeDate = (date) =>{
             return newHour+":"+minute+" "+ "am"
         }
     } 
-    return month[split[1]]+ " " + split[2] + ", " + " " + split[0] + " " + "at" + " "+time(split[3],split[4])
+    return month[split[1]]+ " " + split[2] + ", " + " " + split[0]
+    // return month[split[1]]+ " " + split[2] + ", " + " " + split[0] + " " + "at" + " "+time(split[3],split[4])
     }
 
     

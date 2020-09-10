@@ -26,6 +26,7 @@ class ArticleContainer extends Component{
             <div className="wellnessContainer">
             { this.props.loggedInUser ?
             <div className="wellnessContainerFirst">   
+
                 <div className="categorySelect">
                 <form  onChange={this.selectCat}>
                     <label className="selectLabel">Select category</label>
@@ -46,6 +47,10 @@ class ArticleContainer extends Component{
                     this.props.articles.filter(art => art.category === this.state.category).map(article => <ArticleCard key={article.id} article={article}/> )
                     }
 
+                            <div className="wellnessQuoteDiv">
+                                <h2>"The greatest gift you have to give is that of your own self-transformation."</h2>
+                                <h2>– Lao Tzu</h2>
+                            </div>
                 </div>
             </div>
             :

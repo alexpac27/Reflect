@@ -39,7 +39,11 @@ class JournalContainer extends Component{
                     </div>
                         {this.state.history ? 
                         <div className="journalHistory">
-                            <h1>Previous Journal Entries</h1>
+                            {/* <h1>Previous Journal Entries</h1> */}
+                            <div className="historyQuoteDiv">
+                                <h1>"The root of joy is gratefulness."</h1>
+                                <h2>– David Steindl-Rast</h2>
+                            </div>
                             {person.user.journals.length > 0 ?
                             this.props.journals.filter(journal => journal.user_id === this.props.loggedInUser.user.id).reverse().map(entry => <JournalCard entry={entry} key={entry.id}/>)
                             :

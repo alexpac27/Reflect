@@ -62,6 +62,11 @@ class Profile extends React.Component{
                                 </div>
                         }
 
+                            <div className="wellnessQuoteDiv">
+                                <h2>"Who looks outside, dreams. Who looks inside, awakes."</h2>
+                                <h2>– Carl Jung</h2>
+                            </div>
+
                             <h1>Total Check-Ins</h1>
                         <div className="stats">
                             <div className="mStats">
@@ -77,12 +82,22 @@ class Profile extends React.Component{
                             
                         </div>
 
+                            <div className="wellnessQuoteDiv">
+                                <h2>"Each morning we are born again. What we do today is what matters most."</h2>
+                                <h2>– Buddha</h2>
+                            </div>
+
                         <div>
-                                <h1>Favorite Wellness Resources</h1>
+                            <h1>Favorite Wellness Resources</h1>
                             <div className="profileFavs">
                                 {this.props.loggedInUser.user.articles.map(article => <ArticleCard key={article.id} article={article}/>)}
                             </div>
                         </div>
+
+                        <div className="wellnessQuoteDiv">
+                                <h2>"What we learn with pleasure, we never forget."</h2>
+                                <h2>– Alfred Mercier</h2>
+                            </div>
                     </div>
                  </div>
                     :
