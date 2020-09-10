@@ -31,11 +31,11 @@ class App extends React.Component {
           <NavBar/>
           </div>
           <Switch>
-            <Route path='/moods' render={()=> <MoodContainer/>}></Route>
+            <Route path='/mood' render={()=> <MoodContainer/>}></Route>
             <Route exact path='/calendar' render={()=> <Calendar/>}></Route>
-            <Route path='/journal' render={()=> <JournalContainer/>}></Route>
+            <Route path='/gratitude' render={()=> <JournalContainer/>}></Route>
             <Route path='/breathe' render={()=> <BreatheContainer/>}></Route>
-            <Route path='/resources' render={()=> <ArticleContainer/>}></Route>
+            <Route path='/wellness' render={()=> <ArticleContainer/>}></Route>
             <Route path='/profile' render={()=> <Profile/>}></Route>
             <Route exact path='/' render={()=> <Login/>}></Route>
             <Route exact path='/reflect' render={()=> <Reflect/>}></Route>
