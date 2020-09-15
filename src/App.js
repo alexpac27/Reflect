@@ -17,9 +17,6 @@ import {connect} from 'react-redux'
 
 class App extends React.Component {
 
-//   componentDidMount(){
-//     this.props.fetchFavs()
-// }
 
   render(){
     return (

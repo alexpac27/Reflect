@@ -93,19 +93,7 @@ export const userInfo = (user) => {
     return function(dispatch){ dispatch({type: "logged in user", payload: user}) }
 }
 
-// export const userInfo = (user) => {
-//     return function(dispatch){
-//         fetch("http://localhost:3000/api/v1/users")
-//         .then(resp =>resp.json())
-//         .then(data => dispatch({type: "get users", payload: data})) 
-//     }
-// }
 
-// export const loggedInUser = (obj) => {
-//     return function(dispatch){ dispatch({type: "logged in user", payload: obj}) } // My work around for auth
-// }
-
-//auth code below
 
 export const loggedInUser = (obj) => {
     return function(dispatch){
