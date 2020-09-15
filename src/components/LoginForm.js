@@ -20,19 +20,10 @@ class LoginForm extends Component{
 
     submitForm = (e) => {
         e.preventDefault()
-        //auth code
-        console.log("attempted login")
-        this.props.loggedInUser(this.state)
-        //end of auth code
-
-        // const loggedInUser = this.props.users.find(user => user.email === this.state.email)
-        // if (loggedInUser && loggedInUser.last_name === this.state.password){
-        //     this.props.loggedInUser(loggedInUser)
-        // } else {
-        //     this.setState({error: "The email and/or password is incorrect."})
-        // }
-        
+        this.props.loggedInUser(this.state)  
     }
+
+    
     render(){
         return( 
                 <div className="loginForm">

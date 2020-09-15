@@ -138,7 +138,6 @@ class MoodCard extends Component{
                 </div>
                 <div className="moodBtns">
                     
-                    {/* {console.log ("render", foundLogs)} */}
                     { sortedFoundLogs[sortedFoundLogs.length -1].id === this.props.log.id ?
                     <button className="updateBtn" onClick={()=> this.updateMood(this.props.log.id)}>Update</button>
                     :
@@ -164,6 +163,3 @@ const mdp = (dispatch) => {
 }
 
 export default connect(msp, mdp)(MoodCard)
-
-
-// this.props.loggedInUser.user.logs[this.props.loggedInUser.user.logs.length -1].id

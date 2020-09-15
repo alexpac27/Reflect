@@ -37,17 +37,14 @@ class JournalEntry extends Component{
     render(){
         return(
             <div>
-                {/* <h1>Today's Entry</h1> */}
                 <div >
                     { this.state.formComplete ? 
                      <div>
-                     {/* <h1 className="responseLabel">Thank you for submitting</h1>  */}
                      <JCalendar/>
                      </div>
                     : 
                         <form className="journalForm" onSubmit={this.onSubmit}>
                         <p className="prompt">{_.sample(prompt)}</p>
-                        {/* <p className="prompt">{this.samplePrompt()}</p> */}
                         <span className="numbers">1.  <input name="input1" type="text" className="formInput"></input></span>
                         <span className="numbers">2. <input name="input2" type="text" className="formInput"></input></span>
                         <span className="numbers">3.  <input name="input3" type="text" className="formInput"></input></span>
