@@ -192,54 +192,6 @@ export const changeMood = (idObj, state, user) => {
         }
     }
 }
-// export const changeMood = (idObj, state, user) => {
-//     // console.log("in change mood action", state)
-
-//     if (state.delete){
-//         console.log("in action for deleting mood", idObj)
-       
-//         return function(dispatch){
-//             fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
-//                 method: "DELETE"
-//             })
-//             .then(resp =>resp.json())
-//             .then(data => {
-//                 fetch(`http://localhost:3000/api/v1/users/${user.user.id}`)
-//                 .then( resp => resp.json())
-//                 .then(data => dispatch({type: "logged in user", payload: data}))
-//             } ) // 
-//         }
-//     } else if (state.update){
-//         const obj = moodLogConverter(state)
-//         console.log("updating in action", idObj, user)
-//         return function(dispatch){
-//             fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
-//                 method: "PATCH",
-//                 headers: {
-//                     "content-type":"application/json",
-//                     Accept: "application/json"
-//                 },
-//                 body: JSON.stringify({
-//                     log:
-//                         {user_id: user.id,
-//                         mood_id: obj.mood,
-//                         tag1: obj.tag1,
-//                         tag2: obj.tag2,
-//                         tag3: obj.tag3,
-//                         tag4: obj.tag4,
-//                         tag5: obj.tag5,
-//                     }
-//                 })
-//             })
-//             .then(resp =>resp.json())
-//             .then(data => {
-//                 fetch(`http://localhost:3000/api/v1/users/${user.user.id}`)
-//                 .then( resp => resp.json())
-//                 .then(data => dispatch({type: "logged in user", payload: data})) 
-//         }) //dispatch({type: "update log", payload: data})
-//         }
-//     }
-// }
 
 export const submitLog = (state, user) => {
     const obj = moodLogConverter(state)
@@ -265,7 +217,7 @@ export const submitLog = (state, user) => {
                 })
             })
             .then(resp =>resp.json())
-            .then(data => dispatch({type: "fetched logs", payload: data})) //dispatch({type: "logged in user", payload: data})
+            .then(data => dispatch({type: "fetched logs", payload: data})) 
         }
     } 
 }
