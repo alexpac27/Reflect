@@ -34,12 +34,10 @@ class JournalContainer extends Component{
                     <div className="journalContainerFirst">
                     <JournalEntry/>
                     <div className="historyBtnDiv">
-                       {/* <button className="divider"></button> */}
                     <button onClick={this.showHistory} className="showHistory">{this.state.btnText}</button>
                     </div>
                         {this.state.history ? 
                         <div className="journalHistory">
-                            {/* <h1>Previous Journal Entries</h1> */}
                             <div className="historyQuoteDiv">
                                 <h1>"The root of joy is gratefulness."</h1>
                                 <h2>– David Steindl-Rast</h2>
