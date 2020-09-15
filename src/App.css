@@ -15,16 +15,12 @@
 .mainContainer{
   background-color: #ebebeb;
   background-image: url('https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1935&q=80');
-
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 100%; 
   width: 100%;
-  
-
-
 }
 
 .responseLabel{
@@ -32,12 +28,10 @@
 }
 
 .App{
-  /* margin: 0em; */
   margin-top: -8em;
   padding: 7em;
   padding-left: 2em;
   padding-right: 2em;
-  
 }
 
 
@@ -58,12 +52,10 @@
   background-color: rgb(101, 161, 185);
   height: 8vh;
   width: 100%; 
-  /* width: 95%;  */
   --spacing: 1em;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 1.2rem; 
-  /* font-weight: 900; */
 }
 
 .logoNav{
@@ -83,7 +75,6 @@
   background-color: #ebebeb;
 }
 
-
 .tabTitle{
   background-color: inherit;
   margin-top: auto;
@@ -98,16 +89,12 @@
   padding: calc(var(--spacing) / 2) var(--spacing);
 }
 
-
-
 .tabTitle:after {
   content: "";
   position: absolute;
   display: block;
   bottom: .1em;
   background-color: white;
-  /* left: var(--spacing);
-  right: var(--spacing); */
   height: 3px;
   width: 80%;
    -webkit-transform: scaleX(0);
@@ -124,13 +111,11 @@
   transform: scaleX(1);
   }
 
-
-  .tabTitle:focus{
-    font-weight: 900;
-    /* outline: none; */
-    font-size: 1.3rem; 
-    transition: transform 550ms
-    }
+.tabTitle:focus{
+  font-weight: 900;
+  font-size: 1.3rem; 
+  transition: transform 550ms
+}
 
 .tabTitle:active{
 font-weight: 900;
@@ -138,6 +123,8 @@ font-weight: 900;
 
 
 /* 4. PARENT CONTAINERS */
+
+
 .ArticleContainer{
   display: flex;
   flex-direction: row;
@@ -148,17 +135,11 @@ font-weight: 900;
   
 }
 
-/* .categorySelect{
-  position: fixed;
-  background-color: #ebebeb;
-} */
-
 .loginContainer{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   padding-right: 6em;
-  /* justify-content: space-evenly; */
 }
 
 .wellnessContainer{
@@ -174,7 +155,6 @@ font-weight: 900;
   margin-right: 3em;
   margin-top: 210px;
   background-color: #ebebeb;
-  /* justify-content: flex-end; */
 }
 
 .moodContainer{
@@ -195,7 +175,6 @@ font-weight: 900;
   flex-basis: 45%;
   margin-right: 3em;
   margin-top: 250px;
-  /* justify-content: flex-end; */
 }
 
 .moodContainerFirst{
@@ -204,7 +183,6 @@ font-weight: 900;
   flex-basis: 45%;
   margin-right: 3em;
   margin-top: 250px;
-  /* justify-content: flex-end; */
 }
 
 .journalContainer{
@@ -214,7 +192,6 @@ font-weight: 900;
 }
 
 .journalContainerFirst{
-  /* border: solid black; */
   display: flex;
   flex-direction: column;
   flex-basis: 45%;
@@ -224,9 +201,7 @@ font-weight: 900;
 
 .videoBody{
   min-height: 100vh;
-  /* margin-top: 300px; */
   margin-top: 177px;
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -398,10 +373,8 @@ font-weight: 900;
 
 .btnPressed{
   background-color: rgba(8, 126, 141, 0.973);
-
   margin: 6px;
   border-radius: 12px;
-
   color: white;
   border-color: white;
   height: 2rem;
@@ -424,7 +397,7 @@ font-weight: 900;
   margin: 3px 0px;
   height:22px;
   width: 20rem;
-    font-size:12pt;
+  font-size:12pt;
 }
 
 .prompt{
@@ -454,7 +427,10 @@ font-weight: 900;
   border-style: none;
 }
 
-.formBtn:hover {background-color:#4ca493;}
+.formBtn:hover {
+  background-color:#4ca493;
+}
+
 
 .tagBtn{
   margin: 6px;
@@ -547,7 +523,6 @@ font-weight: 900;
   margin-right: 8px;
   margin-left: -5px;
   border-radius: 8pt;
-
 }
 
 .moodSubmitBtn{
@@ -563,11 +538,12 @@ font-weight: 900;
   margin-bottom: 20px;
 }
 
-.moodSubmitBtn:hover {background-color:#4ca493;}
+.moodSubmitBtn:hover{
+  background-color:#4ca493;
+}
 
 .moodCard{
   display: flex;
-  
   flex-direction: column;
   flex-wrap: wrap;
   flex-shrink: 1;
@@ -664,7 +640,6 @@ font-weight: 900;
   font-weight: lighter;
   color: #010f1c;
   margin-top: -1em;
-  /* margin-left: 40%; */
   font-size: 30px;
   font-family: 'Cedarville Cursive', cursive;
   letter-spacing: 1px;
@@ -686,7 +661,6 @@ font-weight: 900;
 .journalDate{
   font-size: 16px;
   letter-spacing: 1px;
-  /* color: rgba(255, 255, 255, 0.5); */
 }
 
 .profile{
@@ -695,7 +669,6 @@ font-weight: 900;
   flex-wrap: wrap;
   flex-shrink: 1;
   flex-grow: 0;
-  /* border: 3px solid rgb(195, 195, 195); */
   border-style: none;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -797,22 +770,16 @@ font-weight: 900;
   color: rgba(255, 255, 255, 0.657);
 }
 
-
-
 .loginForm{
   display: flex;
   flex-direction: column;
   flex-basis: 35%;
-  /* border: 3px solid rgb(195, 195, 195); */
   margin-top: 40px;
   margin-bottom: 30vh;
   padding: 10px;
   border-radius: 10px;
-  /* background-color: white; */
   justify-content: center;
   min-height: 100vh;
- 
- 
 }
 
 .formBottom{
@@ -832,10 +799,12 @@ font-weight: 900;
 .topLabel{
   margin-left: 27%;
 }
+
 .topLabelWelcome{
   margin-left: 20%;
   margin-top: 100px;
 }
+
 .topLabelPara{
   margin-left: 20%;
   margin-top: -10px;
