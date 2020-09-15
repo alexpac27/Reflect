@@ -77,7 +77,6 @@ class BreathContainer extends Component{
                     <h3>Hold</h3>
 
             </div>
-                {/* <h2 className="quote"><i>Breath is the link between mind and body</i></h2> */}
                 <h2 className="quote"><i>"Breath is the link between mind and body." – Dan Brule</i></h2>
             </>
         )    

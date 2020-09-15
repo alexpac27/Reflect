@@ -16,13 +16,11 @@ class Login extends React.Component{
             .then(resp => resp.json())
             .then(data => this.props.userInfo(data))
         } else{
-            // this.props.history.push("/login")
             console.log("logged out")
         }
     }
 
     render(){
-        // console.log("In login--logged In user", this.props.loggedInUser)
         return(
             <div>
                 {!this.props.loggedInUser ?
@@ -47,4 +45,3 @@ const mdp = (dispatch) => {
 }
 
 export default connect(msp, mdp)(Login)
-// export default withRouter(connect(msp, mdp)(Login))

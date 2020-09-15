@@ -21,7 +21,6 @@ class LoginForm extends Component{
 
     submitForm = (e) => {
         e.preventDefault()
-        // console.log("trying to register", this.state)  
         this.props.createUser(this.state)
     }
 

@@ -62,12 +62,9 @@ class MoodEntry extends Component{
     render(){
         return(
             <div>
-                {/* <h1>Today's Mood Entry</h1> */}
-
                 <div >
                     { this.state.formComplete ? 
                     <div>
-                    {/* <h1 className="responseLabel">Thank you for submitting</h1>  */}
                     <Calendar/>
                     </div>
                     : 

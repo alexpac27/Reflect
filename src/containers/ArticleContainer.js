@@ -21,7 +21,6 @@ class ArticleContainer extends Component{
     }
 
     render(){
-       console.log("in AC -- fetched favs", this.props.favorites)
         return(
             <div className="wellnessContainer">
             { this.props.loggedInUser ?
