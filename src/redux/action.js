@@ -64,7 +64,7 @@ export const renderFav = (idObj, state, userId) => {
                 })
             })
             .then(resp =>resp.json())
-            .then(data => dispatch({type: "logged in user", payload: data}) )  //dispatch({type: "favorite articles", payload: data})
+            .then(data => dispatch({type: "logged in user", payload: data}) ) 
         }
     } else {
         return function(dispatch){
@@ -76,7 +76,7 @@ export const renderFav = (idObj, state, userId) => {
                 fetch(`http://localhost:3000/api/v1/users/${userId}`)
                 .then(resp => resp.json())
                 .then(data => dispatch({type: "logged in user", payload: data}))
-            }) //dispatch({type: "favorite articles", payload: data}) 
+            }) 
         }
     }  
 }
@@ -92,7 +92,6 @@ export const fetchFavs = (dispatch) => {
 export const userInfo = (user) => {
     return function(dispatch){ dispatch({type: "logged in user", payload: user}) }
 }
-
 
 
 export const loggedInUser = (obj) => {
@@ -113,7 +112,6 @@ export const loggedInUser = (obj) => {
     }
 }
 
-//end of auth code
 export const createUser = (state) => {
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/users",{
@@ -148,7 +146,6 @@ export const logOut = (obj) => {
     return function(dispatch){ dispatch({type: "log out", payload: null}) } 
 }
 
-
 export const changeEntry = (idObj) => {
     return function(dispatch){
         fetch(`http://localhost:3000/api/v1/journals/${idObj}`,{
@@ -158,18 +155,6 @@ export const changeEntry = (idObj) => {
         .then(data => dispatch({type: "remove journal", payload: data})) 
     }
 }
-
-// export const deleteMood = (idObj) => {
-//     console.log("in action for deleting mood", idObj)
-   
-//     return function(dispatch){
-//         fetch(`http://localhost:3000/api/v1/logs/${idObj}`,{
-//             method: "DELETE"
-//         })
-//         .then(resp =>resp.json())
-//         .then(data => dispatch({type: "remove mood", payload: data})) 
-//     }
-// }
 
 
 export const changeMood = (idObj, state, user) => {
