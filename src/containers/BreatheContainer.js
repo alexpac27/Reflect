@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import '../Breathing.css';
-import ScriptTag from 'react-script-tag';
-import '../helpers/BreathingExercise.js'
 
 
 const totalTime = 7500
