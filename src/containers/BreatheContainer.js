@@ -51,7 +51,7 @@ class BreathContainer extends Component{
             <>
             <div className="breathBody">
               
-              <h3 className="instructionFont">Breath out</h3>
+              <h3 className="instructionFont">Breathe out</h3>
                 <div className='container'>
 
                     <div className="circle"></div>
@@ -69,7 +69,7 @@ class BreathContainer extends Component{
                     <div className="gradient-circle"></div>
 
                 </div>
-                    <h3 className="instructionFont">Breath In</h3>
+                    <h3 className="instructionFont">Breathe In</h3>
             </div>
             <div className="hold">
                     <h3>Hold</h3>
