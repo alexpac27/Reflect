@@ -6,8 +6,8 @@ A wellness app designed to help you reflect and connect with the present
 
 ## Tech/framework used
  - React.js
- - Redux
- - Thunk middleware
+ - React Redux
+ - Redux Thunk middleware
  - Client-side Routing with `react-router-dom`
- - JSON Web Tokens for authentication
+ - JSON Web Tokens (JWT) for authentication
  - Lodash JavaScript library
