@@ -2,6 +2,8 @@
 
 Reflect is a wellness app designed to help you relax and connect with the present.
 
+This app served as my capstone project for my software engineering bootcamp course at the Flatiron School. I was inspired by Calm, the popular wellness and meditation app, and the emotional rollercoaster that has been 2020. 
+
 <img src="https://i.postimg.cc/ZRmtp8Cr/Screen-Shot-2020-09-15-at-9-04-23-PM.png" alt="App screenshot">
 
 ## Features
