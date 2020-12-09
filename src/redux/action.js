@@ -20,7 +20,7 @@ export const getJournals = (dispatch) => {
     return function(dispatch){
         fetch("http://localhost:3000/api/v1/journals")
         .then(resp =>resp.json())
-        .then(data => dispatch({type: "fetched journals", payload: data})) //
+        .then(data => dispatch({type: "fetched journals", payload: data})) 
     }
 }
 

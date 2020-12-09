@@ -78,6 +78,7 @@ class Calendar extends Component{
                     <div>28</div>
                     <div>29</div>
                     <div>30</div>
+                    <div>31</div>
                     <div className="next-date">1</div>
                     <div className="next-date">2</div>
                     <div className="next-date">3</div>

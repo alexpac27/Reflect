@@ -1,11 +1,3 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    
-} */
-
 .calContainer{
     
     padding: 0;
@@ -16,7 +8,6 @@
     width: 100%;
     height: 100vh;
     color: white;
-    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,10 +82,17 @@
     font-size: 1rem;
     margin: -.5rem .1rem;
     width: calc(27rem/7);
-    height: 5rem;
+    height: 5rem; 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: #222227;
+    border: .2rem solid #777;
+    cursor: pointer;
 }
 
 .prev-date,

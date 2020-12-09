@@ -29,9 +29,7 @@ class Profile extends React.Component{
 
    
     render(){
-        console.log("logged in user", this.props.loggedInUser)
-        console.log("logs", this.props.logs)
-        console.log("journals", this.props.journals)
+        
         return(
             <>
             {this.props.loggedInUser ?
@@ -52,8 +50,6 @@ class Profile extends React.Component{
                                                 </div>
                                                 </div>
                                             </div>
-                                           
-                                           
                                         </div>
                                 :
                                 <div className="profile">
@@ -78,14 +74,13 @@ class Profile extends React.Component{
                                 <i class="fas fa-book-open"></i>
                                 <p>{this.props.loggedInUser.user.journals.length}</p>
                                 <h2>Gratitude Journals</h2>
-                            </div>
-                            
+                            </div>  
                         </div>
 
-                            <div className="wellnessQuoteDiv">
-                                <h2>"Each morning we are born again. What we do today is what matters most."</h2>
-                                <h2>– Buddha</h2>
-                            </div>
+                        <div className="wellnessQuoteDiv">
+                            <h2>"Each morning we are born again. What we do today is what matters most."</h2>
+                            <h2>– Buddha</h2>
+                        </div>
 
                         <div>
                             <h1>Favorite Wellness Resources</h1>

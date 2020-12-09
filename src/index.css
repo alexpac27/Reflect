@@ -6,17 +6,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    /* font-family: 'Anaheim', sans-serif;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-family: 'Cedarville Cursive', cursive;
-    font-family: 'Gudea', sans-serif;
-    font-family: 'Homemade Apple', cursive;
     
-    font-family: 'News Cycle', sans-serif;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Pompiere', cursive; */
-
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
     
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
