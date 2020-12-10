@@ -1,11 +1,39 @@
 import React, {Component} from 'react'
 import '../Calendar.css';
 
-class Calendar extends Component{
+const date = new Date()
 
+class Calendar extends Component{
+    
+    state = {
+        currentMonth: date.getMonth()
+    }
+    
+    previousMonth = () => {
+        if(this.state.currentMonth > 0){
+            this.setState(prevState => {
+                return {
+                    currentMonth: prevState.currentMonth--
+                }
+            })
+        } if(this.state.currentMonth === 0 ){
+            this.setState({currentMonth: 11})
+        }
+    }
+
+    nextMonth = () => {
+        if(this.state.currentMonth < 11){
+            this.setState(prevState => {
+                return {
+                    currentMonth: prevState.currentMonth++
+                }
+            })
+        } if(this.state.currentMonth === 11 ){
+            this.setState({currentMonth: 0})
+        }
+    }
 
     render(){
-        const date = new Date()
 
         const months = [
             "January",
@@ -29,17 +57,21 @@ class Calendar extends Component{
             days += `<div>${i}</div>`
         }
 
-        console.log(date)
+        let firstDay = (new Date(2020, 11, 1))
+        console.log(firstDay.getDay())
+        console.log("state", typeof this.state.currentMonth)
+
+
         return(
             <div className="calContainer">
             <div className="calendar">
                 <div className="month">
-                    <i className="fas fa-angle-left prev"></i>
+                    <i className="fas fa-angle-left prev" onClick={this.previousMonth}></i>
                     <div className="date">
-                    <h1>{months[date.getMonth()]}</h1>
+                    <h1>{months[this.state.currentMonth]}</h1>
                     <p>{date.toDateString()}</p>
                     </div>
-                    <i className="fas fa-angle-right next"></i>
+                    <i className="fas fa-angle-right next" onClick={this.nextMonth}></i>
                 </div> 
                 <div className="weekdays">
                     <div>Sun</div>
