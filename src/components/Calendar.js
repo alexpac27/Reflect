@@ -3,8 +3,10 @@ import '../Calendar.css';
 
 class Calendar extends Component{
 
+
     render(){
         const date = new Date()
+
         const months = [
             "January",
             "February",
@@ -20,11 +22,14 @@ class Calendar extends Component{
             "December",
         ]
         
-        let days = ""
-        for(let i=1;i<31;i++){
+        
+        let days = "";
+
+        for(let i=1;i<= 31;i++){
             days += `<div>${i}</div>`
         }
 
+        console.log(date)
         return(
             <div className="calContainer">
             <div className="calendar">

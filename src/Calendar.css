@@ -1,9 +1,8 @@
 .calContainer{
-    
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: -160px;
+    margin-bottom: -150px;
     margin-top: -170px;
     width: 100%;
     height: 100vh;
@@ -12,15 +11,14 @@
     justify-content: center;
     align-items: center;
     font-size: 75%;
+    
 }
 
 .calendar{
     width: 29rem;
     height: 30rem;
-    /* width: 45rem;
-    height: 52 rem; */
     background-color: #222227;
-    /* box-shadow: 0 0.5rem 3rem rgba(0,0,0, 0.4); */
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0, 0.4);
 }
 
 .month{
@@ -32,10 +30,12 @@
     align-items: center;
     padding: 7px;
     text-align: center;
-    /* text-shadow: 0 .3rem .5rem rgba(0,0,0, 0.5); */
+    
 }
 
 .month i {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -58,17 +58,17 @@
     padding: 0 0.4rem;
     display: flex;
     align-items: center;
+    
 }
 
 .weekdays div{
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: .1rem;
-    width: calc(28rem/7);
+    width: calc(28.2rem/7);
     display: flex;
     justify-content: center;
     align-items: center;
-    /* text-shadow: 0 .3rem .5rem rgba(0,0,0, 0.5); */
 }
 
 .days{
@@ -79,28 +79,29 @@
 }
 
 .days div{
-    font-size: 1rem;
-    margin: -.5rem .1rem;
-    width: calc(27rem/7);
-    height: 5rem; 
+    font-size: 1rem; 
+    margin: .5rem .1rem; 
+    width: calc(27.3rem/7);
+    height: 3rem; 
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s;
+    padding: -1rem;
+   
 }
 
-.days div:hover:not(.today){
-    background-color: #222227;
-    border: .2rem solid #777;
-    cursor: pointer;
-}
 
 .prev-date,
 .next-date{
-    opacity: .3;
+    opacity: .4;
 }
 
 .today{
     background-color: #336d62;
+    height: 40%;
+    
 }
+
+
 
